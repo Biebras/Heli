@@ -4,41 +4,31 @@
 #include "MovementSystem.hpp"
 #include "TransformComponent.hpp"
 #include "MemoryPool.hpp"
+#include "PoolManager.hpp"
 
 using namespace Heli;
 
 int main()
 {
-    MemoryPool<int> pool(3);
+    auto& poolManager = PoolManager::GetInstance();
 
-    // Allocate an int object from the pool
-    int* x = pool.Allocate();
-    *x = 42;
+    poolManager.CreatePool<Entity>(10);
+    poolManager.CreatePool<TransformComponent>(10);
 
-    // Allocate an int object from the pool
-    int* y = pool.Allocate();
-    *y = 42;
+    MemoryPool<Entity>& entityPool = poolManager.GetPool<Entity>();
+    MemoryPool<TransformComponent>& transformPool = poolManager.GetPool<TransformComponent>();
 
-    // Allocate an int object from the pool
-    int z = *pool.Allocate();
-    z = 42;
+    Entity* entity = entityPool.Allocate();
+    TransformComponent* transform = transformPool.Allocate();
 
-    std::cout << *x << std::endl;
+    printf("Entity: %p\n", entity);
+    printf("Transform: %p\n", transform);
 
-    pool.Free(x);
+    entityPool.Free(entity);
+    transformPool.Free(transform);
 
-    // Allocate an int object from the pool
-    int* h = pool.Allocate();
-    *h = 42;
-
-    // Use the int object
-
-    std::cout << *y << std::endl;
-    std::cout << z << std::endl;
-    std::cout << *h << std::endl;
-
-    // Free the int object
-    pool.Free(x);
+    printf("Entity: %p\n", entity);
+    printf("Transform: %p\n", transform);
 
     return 0;
 }

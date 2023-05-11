@@ -11,7 +11,13 @@ namespace Heli
     {
         public:
             Entity() {};
-            ~Entity() {};
+            ~Entity() 
+            {
+                for (auto& component : components)
+                {
+                    delete component.second;
+                }
+            };
             template <typename T>
             void AddComponent(T* component);
             template <typename T>

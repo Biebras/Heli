@@ -4,24 +4,37 @@
 
 namespace Heli
 {
-    template<typename T>
-    class MemoryPool
+    /// @brief By having this class, we can store all the memory pools in a single container
+    class MemoryPoolBase
     {
-    public:
-        MemoryPool(std::size_t size);
-        ~MemoryPool();
-        T* Allocate();
-        void Free(T* object);
-
-    private:
-        T* memory;
-        std::size_t size;
-
-        // List of free memory addresses
-        T** freeList;
-        size_t availableSize;
+        public:
+            virtual ~MemoryPoolBase() = default;
     };
 
+    /// @brief A memory pool for a specific type. Allows for fast allocation and deallocation
+    /// @tparam T 
+    template<typename T>
+    class MemoryPool : public MemoryPoolBase
+    {
+        public:
+            MemoryPool(std::size_t size);
+            ~MemoryPool();
+            T* Allocate();
+            void Free(T*& object);
+
+        private:
+            T* memory;
+            std::size_t size;
+
+            // List of free memory addresses
+            T** freeList;
+            size_t availableSize;
+    };
+
+
+    /// @brief Constructs the memory pool and initializes the free list
+    /// @tparam T 
+    /// @param size The size of the pool
     template<typename T>
     MemoryPool<T>::MemoryPool(std::size_t size)
     {
@@ -66,7 +79,7 @@ namespace Heli
     }
 
     template<typename T>
-    void MemoryPool<T>::Free(T* object)
+    void MemoryPool<T>::Free(T*& object)
     {
         if (availableSize == size)
             return;
@@ -80,5 +93,8 @@ namespace Heli
 
         // Add the object to the free list
         freeList[availableSize++] = object;
+
+        // Set the object to nullptr
+        object = nullptr;
     }
 }
