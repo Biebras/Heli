@@ -5,6 +5,7 @@
 #include "TransformComponent.hpp"
 #include "MemoryPool.hpp"
 #include "PoolManager.hpp"
+#include "LogManager.hpp"
 
 using namespace Heli;
 
@@ -29,6 +30,9 @@ int main()
 
     printf("Entity: %p\n", entity);
     printf("Transform: %p\n", transform);
+
+    LogManager::LogWarning("This is a warning!");
+    LogManager::LogError("This is an error!");
 
     return 0;
 }
