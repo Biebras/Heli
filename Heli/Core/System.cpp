@@ -1,6 +1,9 @@
 #include "System.hpp"
 
-void System::AddEntity(Entity* entity)
+namespace Heli
 {
-    entities.push_back(entity);
+    void System::AddEntity(Entity* entity)
+    {
+        entities.push_back(entity);
+    }
 }

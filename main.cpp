@@ -3,34 +3,42 @@
 #include "Entity.hpp"
 #include "MovementSystem.hpp"
 #include "TransformComponent.hpp"
-#include "Math.hpp"
+#include "MemoryPool.hpp"
 
-using namespace std;
+using namespace Heli;
 
 int main()
 {
-    Entity entity1;
-    TransformComponent transform1;
-    transform1.position.x = 0.0f;
-    transform1.position.y = 0.0f;
-    entity1.AddComponent(&transform1);
+    MemoryPool<int> pool(3);
 
-    Entity entity2;
-    TransformComponent transform2;
-    transform2.position.x = 0.0f;
-    transform2.position.y = 0.0f;
-    entity2.AddComponent(&transform2);
+    // Allocate an int object from the pool
+    int* x = pool.Allocate();
+    *x = 42;
 
-    MovementSystem* movementSystem = new MovementSystem();
+    // Allocate an int object from the pool
+    int* y = pool.Allocate();
+    *y = 42;
 
-    movementSystem->AddEntity(&entity1);
-    movementSystem->AddEntity(&entity2);
+    // Allocate an int object from the pool
+    int z = *pool.Allocate();
+    z = 42;
 
-    // Later this will be while loop
-    for (int i = 0; i < 10; i++)
-    {
-        movementSystem->Update();
-    }
+    std::cout << *x << std::endl;
+
+    pool.Free(x);
+
+    // Allocate an int object from the pool
+    int* h = pool.Allocate();
+    *h = 42;
+
+    // Use the int object
+
+    std::cout << *y << std::endl;
+    std::cout << z << std::endl;
+    std::cout << *h << std::endl;
+
+    // Free the int object
+    pool.Free(x);
 
     return 0;
 }

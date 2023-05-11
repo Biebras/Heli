@@ -1,11 +1,11 @@
-#ifndef COMPONENT_HPP
-#define COMPONENT_HPP
+#pragma once
 
-class Component
+namespace Heli
 {
-    public:
-        Component() {};
-        virtual ~Component() {};
-};
-
-#endif
+    class Component
+    {
+        public:
+            Component() {};
+            virtual ~Component() {};
+    };
+}

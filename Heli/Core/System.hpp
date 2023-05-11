@@ -1,20 +1,20 @@
-#ifndef SYSTEM_HPP
-#define SYSTEM_HPP
+#pragma once
 
 #include <vector>
 
 #include "Entity.hpp"
 
-class System
+namespace Heli
 {
-    public:
-        System() {};
-        ~System() {};
-        void AddEntity(Entity* entity);
-        virtual void Update() = 0;
+    class System
+    {
+        public:
+            System() {};
+            ~System() {};
+            void AddEntity(Entity* entity);
+            virtual void Update() = 0;
 
-    protected:
-        std::vector<Entity*> entities;
-};
-
-#endif
+        protected:
+            std::vector<Entity*> entities;
+    };
+}

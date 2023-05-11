@@ -1,13 +1,13 @@
-#ifndef TRANSFORMCOMPONENT_HPP
-#define TRANSFORMCOMPONENT_HPP
+#pragma once
 
 #include "Component.hpp"
-#include "Math.hpp"
 
-class TransformComponent : public Component
+namespace Heli
 {
-    public:
-        Vector2 position;
-};
-
-#endif
+    class TransformComponent : public Component
+    {
+        public:
+            float positionX;
+            float positionY;
+    };
+}
