@@ -26,6 +26,7 @@ int main()
     movementSystem->AddEntity(&entity1);
     movementSystem->AddEntity(&entity2);
 
+    // Later this will be while loop
     for (int i = 0; i < 10; i++)
     {
         movementSystem->Update();
