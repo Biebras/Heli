@@ -8,10 +8,10 @@ CXXFLAGS = -Wall -Wextra -std=c++17
 LDFLAGS = 
 
 # Set the directories to search for header files
-INCLUDES = -I./Assets/Scripts -I./Heli
+INCLUDES = -I./Heli/Core -I./Assets/Scripts
 
 # Find all .cpp files in the App/ECS and App/Scripts directories, as well as the App/main.cpp file
-SOURCES = $(wildcard Assets/Scripts/*.cpp) $(wildcard Heli/*.cpp) main.cpp
+SOURCES = $(wildcard Heli/*.cpp Heli/*/*.cpp) $(wildcard Assets/Scripts/*.cpp) main.cpp
 
 # Generate a list of object files by replacing .cpp with .o in the list of source files
 OBJECTS = $(SOURCES:.cpp=.o)
