@@ -5,6 +5,9 @@
 #include <unordered_map>
 
 #include "MemoryPool.hpp"
+#include "Component.hpp"
+#include "LogManager.hpp"
+#include "ClassTypeId.hpp"
 
 namespace Heli
 {
@@ -22,9 +25,10 @@ namespace Heli
 
             template <typename T>
             MemoryPool<T>& GetPool();
-
+            MemoryPoolBase* GetPool(TypeId typeId);
             template <typename T>
             void CreatePool(std::size_t size);
+            void DeallocateComponent(Component* component);
 
         private:
             // Singleton stuff
@@ -33,7 +37,7 @@ namespace Heli
             PoolManager(const PoolManager&) = delete;
             PoolManager& operator=(const PoolManager&) = delete;
 
-            std::unordered_map<std::type_index, std::unique_ptr<MemoryPoolBase>> pools;
+            std::unordered_map<TypeId, std::unique_ptr<MemoryPoolBase>> pools;
     };
 
     /// @brief Finds the pool in the pool hashmap and returns it
@@ -43,7 +47,9 @@ namespace Heli
     MemoryPool<T>& PoolManager::GetPool()
     {
         // Find the pool for the given type
-        auto it = pools.find(std::type_index(typeid(T)));
+        TypeId typeId = GetTypeID<T>();
+        auto it = pools.find(typeId);
+        LogManager::Log("Getting pool for type with type id: %d", typeId);
 
         // if the pool is found, return it
         if (it != pools.end())
@@ -63,7 +69,8 @@ namespace Heli
     template <typename T>
     void PoolManager::CreatePool(std::size_t size)
     {
+        TypeId typeId = GetTypeID<T>();
         auto pool = std::make_unique<MemoryPool<T>>(size);
-        pools[std::type_index(typeid(T))] = std::move(pool);
+        pools[typeId] = std::move(pool);
     }
 }

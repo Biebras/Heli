@@ -2,7 +2,7 @@
 CXX = g++
 
 # Set the flags to use when compiling C++ files
-CXXFLAGS = -Wall -Wextra -std=c++17
+CXXFLAGS = -Wall -Wextra -std=c++20
 
 # Set the flags to use when linking object files
 LDFLAGS = 

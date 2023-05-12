@@ -9,6 +9,7 @@ namespace Heli
     {
         public:
             virtual ~MemoryPoolBase() = default;
+            virtual void Free(void* object) = 0;
     };
 
     /// @brief A memory pool for a specific type. Allows for fast allocation and deallocation
@@ -21,6 +22,10 @@ namespace Heli
             ~MemoryPool();
             T* Allocate();
             void Free(T*& object);
+            void Free(void* object) override
+            {
+                Free(reinterpret_cast<T*&>(object));
+            }
 
         private:
             T* memory;
@@ -74,6 +79,7 @@ namespace Heli
 
         // Construct the object
         new (object) T();
+        object->TypeId = GetTypeID<T>();
 
         return object;
     }
