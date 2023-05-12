@@ -21,7 +21,7 @@ namespace Heli
                 for (auto& component : components)
                 {
                     LogManager::Log("Deallocating component with type id: %d", component.second->TypeId);
-                    PoolManager::GetInstance().GetPool(component.second->TypeId)->Free(*component.second);
+                    PoolManager::GetInstance().GetPool(component.second->TypeId)->Free(component.second);
                 }
                 
             };
