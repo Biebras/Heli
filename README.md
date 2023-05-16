@@ -8,6 +8,14 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
 - 2D only
 - ECS architecture
 
+## Improvements
+- [ ] Memory Pool
+  - [ ] Allign Memory
+  - [ ] Maybe switch to smart pointers?
+  - [ ] Thread Safty
+- [ ] Memory Manager
+  - [ ] 
+
 ## TODO
 - [ ] Finnish ECS
 - [ ] Implement graphics library with OpenGL
