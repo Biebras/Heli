@@ -27,7 +27,7 @@ namespace Heli
             MemoryPool<T>& GetPool();
             MemoryPoolBase& GetPool(TypeId typeId);
             template <typename T>
-            void CreatePool(std::size_t size);
+            MemoryPool<T>& CreatePool(std::size_t size);
             void DeallocateComponent(Component* component);
 
         private:
@@ -58,10 +58,11 @@ namespace Heli
     /// @tparam T
     /// @param size The size of the pool 
     template <typename T>
-    void MemoryManager::CreatePool(std::size_t size)
+    MemoryPool<T>& MemoryManager::CreatePool(std::size_t size)
     {
         TypeId typeId = GetTypeId<T>();
         auto pool = std::make_unique<MemoryPool<T>>(size);
         pools[typeId] = std::move(pool);
+        return static_cast<MemoryPool<T>&>(*pools[typeId]);
     }
 }

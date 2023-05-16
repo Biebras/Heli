@@ -8,12 +8,9 @@ int main()
 {
     auto& poolManager = MemoryManager::GetInstance();
 
-    poolManager.CreatePool<Entity>(10);
-    poolManager.CreatePool<TransformComponent>(2);
+    MemoryPool<Entity>& entityPool = poolManager.CreatePool<Entity>(10);
+    MemoryPool<TransformComponent>& transformPool = poolManager.CreatePool<TransformComponent>(2);
     //poolManager.CreatePool<VelocityComponent>(10);
-
-    MemoryPool<Entity>& entityPool = poolManager.GetPool<Entity>();
-    MemoryPool<TransformComponent>& transformPool = poolManager.GetPool<TransformComponent>();
 
     //Entity* entity = entityPool.Allocate();
 
