@@ -29,7 +29,7 @@ namespace Heli
     std::atomic<TypeId> ClassTypeId<TBase>::nextTypeId{0};
 
     template <class T>
-    TypeId GetTypeID()
+    TypeId GetTypeId()
     {
         return ClassTypeId<void>::GetTypeId<T>();
     }

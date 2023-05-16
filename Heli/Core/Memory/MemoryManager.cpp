@@ -1,9 +1,16 @@
-
-#include "PoolManager.hpp"
+#include "MemoryManager.hpp"
 
 namespace Heli
 {
-    MemoryPoolBase* PoolManager::GetPool(TypeId typeId)
+    MemoryManager::~MemoryManager()
+    {
+        for (auto& pool : pools)
+        {
+            pool.second.reset();
+        }
+    }
+
+    MemoryPoolBase& MemoryManager::GetPool(TypeId typeId)
     {   
         // Find the pool for the given type index
         auto it = pools.find(typeId);
@@ -11,7 +18,7 @@ namespace Heli
         // if the pool is found, return it
         if (it != pools.end())
         {
-            return it->second.get();
+            return *(it->second.get());
         }
         else
         {

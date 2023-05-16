@@ -9,7 +9,7 @@ namespace Heli
     {
         public:
             virtual ~MemoryPoolBase() = default;
-            virtual void Free(void* object) = 0;
+            virtual void Free(void*& object) = 0;
     };
 
     /// @brief A memory pool for a specific type. Allows for fast allocation and deallocation
@@ -22,7 +22,7 @@ namespace Heli
             ~MemoryPool();
             T* Allocate();
             void Free(T*& object);
-            void Free(void* object) override
+            void Free(void*& object) override
             {
                 Free(reinterpret_cast<T*&>(object));
             }
@@ -33,7 +33,7 @@ namespace Heli
 
             // List of free memory addresses
             T** freeList;
-            size_t availableSize;
+            size_t availableObjects;
     };
 
 
@@ -55,7 +55,7 @@ namespace Heli
             freeList[i] = &memory[i];
         }
 
-        availableSize = size;
+        availableObjects = size;
     }
 
     template<typename T>
@@ -70,16 +70,16 @@ namespace Heli
     T* MemoryPool<T>::Allocate()
     {
         // If there is no more available memory, return nullptr
-        if (availableSize == 0)
+        if (availableObjects == 0)
             return nullptr;
 
         // Get a free object from the free list
-        availableSize--;
-        T* object = freeList[availableSize];
+        availableObjects--;
+        T* object = freeList[availableObjects];
 
         // Construct the object
         new (object) T();
-        object->TypeId = GetTypeID<T>();
+        object->TypeId = GetTypeId<T>();
 
         return object;
     }
@@ -87,9 +87,6 @@ namespace Heli
     template<typename T>
     void MemoryPool<T>::Free(T*& object)
     {
-        if (availableSize == size)
-            return;
-
         // If the object is not in the memory pool, return
         if (object < memory || object >= memory + size)
             return;
@@ -98,7 +95,8 @@ namespace Heli
         object->~T();
 
         // Add the object to the free list
-        freeList[availableSize++] = object;
+        freeList[availableObjects] = object;
+        availableObjects++;
 
         // Set the object to nullptr
         object = nullptr;

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Component.hpp"
+#include "../ECS/Component.hpp"
 
 namespace Heli
 {
-    class TransformComponent : public Component
+    struct TransformComponent : public Component
     {
         public:
             float positionX;

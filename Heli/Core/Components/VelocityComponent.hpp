@@ -1,13 +1,12 @@
 #pragma once
 
-#include "Component.hpp"
+#include "../ECS/Component.hpp"
 
 namespace Heli
 {
-    class VelocityComponent : public Component
+    struct VelocityComponent : public Component
     {
-        public:
-            float directionX;
-            float directionY;
+        float directionX;
+        float directionY;
     };
 }

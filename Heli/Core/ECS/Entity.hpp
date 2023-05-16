@@ -4,9 +4,7 @@
 #include <typeindex>
 
 #include "Component.hpp"
-#include "LogManager.hpp"
-#include "PoolManager.hpp"
-#include "MemoryPool.hpp"
+#include "../Memory/MemoryManager.hpp"
 
 namespace Heli
 {
@@ -16,14 +14,16 @@ namespace Heli
             Entity() {};
             ~Entity() 
             {
-                LogManager::Log("Deallocating entity with type id: %d", TypeId);
-                // Deallocate all the components
+                auto& instance = MemoryManager::GetInstance();
+
                 for (auto& component : components)
                 {
-                    LogManager::Log("Deallocating component with type id: %d", component.second->TypeId);
-                    PoolManager::GetInstance().GetPool(component.second->TypeId)->Free(component.second);
+                    auto& pool = instance.GetPool(component.second->TypeId);
+                    void* ptr = component.second;
+                    pool.Free(ptr);
                 }
-                
+
+                components.clear();
             };
             template <typename T>
             void AddComponent(T* component);
