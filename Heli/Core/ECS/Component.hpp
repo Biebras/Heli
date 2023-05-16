@@ -8,6 +8,6 @@ namespace Heli
     {
         public:
             ~Component() {};
-            TypeId TypeId;
+            TypeId TypeID = UNDEFINED_TYPE;
     };
 }

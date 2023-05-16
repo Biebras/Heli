@@ -30,9 +30,6 @@ int main()
 
     transformPool.Free(transform1);
     TransformComponent* transform3 = transformPool.Allocate();
-
-    LOG("Transform3 position: %f, %f", transform3->positionX, transform3->positionY);
-
     //entityPool.Free(entity);
     //transformPool.Free(transform1);
     

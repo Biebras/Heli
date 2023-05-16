@@ -10,6 +10,9 @@ namespace Heli
         }
     }
 
+    /// @brief Gets the memory pool for the specified type ID.
+    /// @param typeId The type ID of the objects stored in the memory pool.
+    /// @return A reference to the memory pool for the specified type ID.
     MemoryPoolBase& MemoryManager::GetPool(TypeId typeId)
     {   
         // Find the pool for the given type index

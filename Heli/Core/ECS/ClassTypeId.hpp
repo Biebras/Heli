@@ -7,7 +7,11 @@
 
 namespace Heli
 {
+    // Define TypeId as std::size_t
     typedef std::size_t TypeId;
+
+    // Define unsigned type macro wich is -1
+    #define UNDEFINED_TYPE static_cast<Heli::TypeId>(-1)
 
     template <typename TBase>
     class ClassTypeId

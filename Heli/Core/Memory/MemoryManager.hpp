@@ -6,7 +6,7 @@
 
 #include "MemoryPool.hpp"
 #include "../ECS/Component.hpp"
-#include "../Logger/Debug.hpp"
+#include "../Logging/Debug.hpp"
 #include "../ECS/ClassTypeId.hpp"
 
 namespace Heli
@@ -28,7 +28,6 @@ namespace Heli
             MemoryPoolBase& GetPool(TypeId typeId);
             template <typename T>
             MemoryPool<T>& CreatePool(std::size_t size);
-            void DeallocateComponent(Component* component);
 
         private:
             // Singleton stuff
@@ -40,9 +39,9 @@ namespace Heli
             std::unordered_map<TypeId, std::unique_ptr<MemoryPoolBase>> pools;
     };
 
-    /// @brief Finds the pool in the pool hashmap and returns it
-    /// @tparam T 
-    /// @return MemoryPool<T>&
+    /// @brief Gets the memory pool for the specified type.
+    /// @tparam T The type of objects stored in the memory pool.
+    /// @return A reference to the memory pool for the specified type.
     template <typename T>
     MemoryPool<T>& MemoryManager::GetPool()
     {
@@ -54,9 +53,10 @@ namespace Heli
         return static_cast<MemoryPool<T>&>(*pool);
     }
 
-    /// @brief Creates a pool for the given type and adds it to the pool hashmap
-    /// @tparam T
-    /// @param size The size of the pool 
+    /// @brief Creates a new memory pool for the specified type and size.
+    /// @tparam T The type of objects stored in the memory pool.
+    /// @param size The size of the memory pool (number of objects).
+    /// @return A reference to the newly created memory pool.
     template <typename T>
     MemoryPool<T>& MemoryManager::CreatePool(std::size_t size)
     {

@@ -4,7 +4,8 @@
 
 namespace Heli
 {
-    /// @brief By having this class, we can store all the memory pools in a single container
+    /// @brief Base class for memory pools.
+    /// Allows for storing all memory pools in a single container.
     class MemoryPoolBase
     {
         public:
@@ -12,8 +13,9 @@ namespace Heli
             virtual void Free(void*& object) = 0;
     };
 
-    /// @brief A memory pool for a specific type. Allows for fast allocation and deallocation
-    /// @tparam T 
+    /// @brief A memory pool for a specific type.
+    /// Allows for fast allocation and deallocation of objects of type T.
+    /// @tparam T The type of objects stored in the memory pool.
     template<typename T>
     class MemoryPool : public MemoryPoolBase
     {
@@ -22,6 +24,7 @@ namespace Heli
             ~MemoryPool();
             T* Allocate();
             void Free(T*& object);
+            // Inherited via MemoryPoolBase and redirected to the correct Free function
             void Free(void*& object) override
             {
                 Free(reinterpret_cast<T*&>(object));
@@ -38,8 +41,8 @@ namespace Heli
 
 
     /// @brief Constructs the memory pool and initializes the free list
-    /// @tparam T 
-    /// @param size The size of the pool
+    /// @tparam T The type of objects stored in the memory pool.
+    /// @param size The size of the pool (number of objects).
     template<typename T>
     MemoryPool<T>::MemoryPool(std::size_t size)
     {
@@ -66,6 +69,10 @@ namespace Heli
         delete[] freeList;
     }
 
+    /// @brief Allocates an object from the pool.
+    /// Constructs a new object using placement new and returns a pointer to it.
+    /// If there are no available objects in the pool, returns nullptr.
+    /// @return A pointer to the newly allocated object, or nullptr if the pool is full.
     template<typename T>
     T* MemoryPool<T>::Allocate()
     {
@@ -79,11 +86,16 @@ namespace Heli
 
         // Construct the object
         new (object) T();
-        object->TypeId = GetTypeId<T>();
+        object->TypeID = GetTypeId<T>();
 
         return object;
     }
 
+    /// @brief Frees an object and returns it to the pool.
+    /// Calls the destructor on the object and adds it to the free list.
+    /// If the object is not within the memory managed by the pool, does nothing.
+    /// Sets the object pointer to nullptr after freeing it.
+    /// @param[in,out] object A reference to a pointer to the object to be freed.
     template<typename T>
     void MemoryPool<T>::Free(T*& object)
     {

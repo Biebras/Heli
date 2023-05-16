@@ -12,7 +12,7 @@ namespace Heli
             System() {};
             ~System() {};
             void AddEntity(Entity* entity);
-            virtual void Update() = 0;
+            virtual void OnUpdate() = 0;
 
         protected:
             std::vector<Entity*> entities;

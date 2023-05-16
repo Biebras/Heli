@@ -1,7 +1,7 @@
 #ifndef HELICORE_HPP
 #define HELICORE_HPP
 
-#include "Core/Logger/Debug.hpp"
+#include "Core/Logging/Debug.hpp"
 #include "Core/ECS/ClassTypeId.hpp"
 #include "Core/ECS/Component.hpp"
 #include "Core/ECS/Entity.hpp"
