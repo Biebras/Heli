@@ -14,7 +14,7 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
   - [ ] Maybe switch to smart pointers?
   - [ ] Thread Safty
 - [ ] Memory Manager
-  - [ ] 
+  - [ ] Thread Safty
 
 ## TODO
 - [ ] Finnish ECS
