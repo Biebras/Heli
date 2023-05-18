@@ -10,5 +10,6 @@
 #include "Core/Memory/MemoryManager.hpp"
 #include "Core/Components/TransformComponent.hpp"
 #include "Core/Components/VelocityComponent.hpp"
+#include "Core/Systems/TransformSystem.hpp"
 
 #endif
