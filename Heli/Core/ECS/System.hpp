@@ -4,17 +4,24 @@
 
 #include "ClassTypeId.hpp"
 #include "../Logging/Debug.hpp"
+#include "Entity.hpp"
 
 namespace Heli
 {
+    class SystemBase
+    {
+    public:
+        virtual ~SystemBase() {}
+        virtual void OnUpdate(const std::vector<Entity>& entities) = 0;
+        TypeId TypeID = UNDEFINED_TYPE;
+    };
+
     template<typename... ComponentClasses>
-    class System
+    class System : public SystemBase
     {
         public:
             System() : requiredComponents{GetTypeId<ComponentClasses>()...} {}
             ~System() {};
-            virtual void OnUpdate(const std::vector<Entity>& entities) = 0;
-            TypeId TypeID = UNDEFINED_TYPE;
 
         protected:
             // Define a vector of required component types

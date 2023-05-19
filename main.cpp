@@ -14,7 +14,7 @@ int main()
     //Entity* entity = entityPool.Allocate();
 
     TransformSystem* transformSystem = new TransformSystem();
-    transformSystem->OnUpdate();
+    //transformSystem->OnUpdate();
 
     TransformComponent* transform1 = transformPool.Allocate();
     TransformComponent* transform2 = transformPool.Allocate();
