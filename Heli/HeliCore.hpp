@@ -8,6 +8,7 @@
 #include "Core/ECS/System.hpp"
 #include "Core/Memory/MemoryPool.hpp"
 #include "Core/Memory/MemoryManager.hpp"
+#include "Core/ECS/SystemManager.hpp"
 #include "Core/Components/TransformComponent.hpp"
 #include "Core/Components/VelocityComponent.hpp"
 #include "Core/Systems/TransformSystem.hpp"

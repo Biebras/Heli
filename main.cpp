@@ -7,14 +7,16 @@ using namespace Heli;
 int main()
 {
     auto& poolManager = MemoryManager::GetInstance();
+    auto& systemManager = SystemManager::GetInstance();
 
     //MemoryPool<Entity>& entityPool = poolManager.CreatePool<Entity>(10);
     MemoryPool<TransformComponent>& transformPool = poolManager.CreatePool<TransformComponent>(2);
 
     //Entity* entity = entityPool.Allocate();
-
-    TransformSystem* transformSystem = new TransformSystem();
-    //transformSystem->OnUpdate();
+    systemManager.AllocateSystem<TransformSystem>();
+    //systemManager.AllocateSystem<TransformSystem>();
+    
+    systemManager.Update();
 
     TransformComponent* transform1 = transformPool.Allocate();
     TransformComponent* transform2 = transformPool.Allocate();

@@ -10,10 +10,10 @@ namespace Heli
 {
     class SystemBase
     {
-    public:
-        virtual ~SystemBase() {}
-        virtual void OnUpdate(const std::vector<Entity>& entities) = 0;
-        TypeId TypeID = UNDEFINED_TYPE;
+        public:
+            virtual ~SystemBase() {}
+            virtual void OnUpdate(const std::vector<Entity>& entities) {};
+            TypeId TypeID = UNDEFINED_TYPE;
     };
 
     template<typename... ComponentClasses>

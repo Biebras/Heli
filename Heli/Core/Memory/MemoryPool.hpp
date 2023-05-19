@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <unordered_set>
 
 namespace Heli
 {
@@ -29,6 +30,8 @@ namespace Heli
             {
                 Free(reinterpret_cast<T*&>(object));
             }
+            // Function to retrieve the set of allocated blocks
+            const std::unordered_set<T*>& GetAllocatedBlocks() const { return allocatedBlocks; }
 
         private:
             T* memory;
@@ -37,6 +40,9 @@ namespace Heli
             // List of free memory addresses
             T** freeList;
             size_t availableObjects;
+
+            // Set of allocated blocks
+            std::unordered_set<T*> allocatedBlocks;
     };
 
 
@@ -88,6 +94,9 @@ namespace Heli
         new (object) T();
         object->TypeID = GetTypeId<T>();
 
+        // Add the object to the set of allocated blocks
+        allocatedBlocks.insert(object);
+
         return object;
     }
 
@@ -109,6 +118,9 @@ namespace Heli
         // Add the object to the free list
         freeList[availableObjects] = object;
         availableObjects++;
+
+        // Remove the object from the set of allocated blocks
+        allocatedBlocks.erase(object);
 
         // Set the object to nullptr
         object = nullptr;

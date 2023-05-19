@@ -13,7 +13,7 @@ namespace Heli
         public:
             virtual void OnUpdate(const std::vector<Entity>& entities) override
             {
-                
+                LOG("Hello this is transform system!");
             }
     };
 }
