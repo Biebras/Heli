@@ -15,6 +15,7 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
 - [ ] Implement event system
 - [ ] Implement unit testing
 - [ ] Implement audio system
+- [ ] Test Engine with Git actions
 
 ## Future Improvements
 - [ ] Memory Pool
