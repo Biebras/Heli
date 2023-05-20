@@ -9,6 +9,7 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
 - ECS architecture
 
 ## TODO
+- [ ] Switch to CMake
 - [ ] Finnish ECS
 - [ ] Implement graphics library with OpenGL
 - [ ] Implement event system
