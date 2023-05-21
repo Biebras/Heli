@@ -8,12 +8,12 @@
 
 namespace Heli
 {
-    class TransformSystem : public System<TransformComponent, VelocityComponent>
+    class ShitSystem : public System<TransformComponent>
     {
         public:
             virtual void OnUpdate() override
             {
-                LOG("Hello this is transform system!");
+                LOG("Hello this is shit system!");
             }
     };
 }

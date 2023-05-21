@@ -12,7 +12,7 @@ namespace Heli
     {
         public:
             virtual ~SystemBase() {}
-            virtual void OnUpdate(const std::vector<Entity>& entities) {};
+            virtual void OnUpdate() {};
             TypeId TypeID = UNDEFINED_TYPE;
     };
 

@@ -6,8 +6,7 @@ namespace Heli
     {
         for (auto& system : systems)
         {
-            std::vector<Entity>* entities = new std::vector<Entity>();
-            system->OnUpdate(*entities);
+            system->OnUpdate();
         }
     }
 }

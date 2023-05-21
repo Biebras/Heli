@@ -14,12 +14,15 @@ int main()
 
     //Entity* entity = entityPool.Allocate();
     systemManager.AllocateSystem<TransformSystem>();
+    systemManager.AllocateSystem<ShitSystem>();
     //systemManager.AllocateSystem<TransformSystem>();
     
     systemManager.Update();
 
     TransformComponent* transform1 = transformPool.Allocate();
     TransformComponent* transform2 = transformPool.Allocate();
+
+    LOG("Allocated transforms count: %d", transformPool.GetAllocatedBlocks().size());
 
     //entity->AddComponent(transform1);
 
@@ -33,28 +36,15 @@ int main()
     LOG("Transform2 position: %f, %f", transform2->positionX, transform2->positionY);
 
     transformPool.Free(transform1);
+
+    LOG("Allocated transforms count: %d", transformPool.GetAllocatedBlocks().size());
+
     TransformComponent* transform3 = transformPool.Allocate();
-    //entityPool.Free(entity);
-    //transformPool.Free(transform1);
-    
-    //transform1->positionX = 40;
-    //transform1->positionY = 50;
 
-    //LogManager::Log("Transform1 position: %f, %f", transform1->positionX, transform1->positionY);
-
-    //entity->AddComponent(transform1);
-    //entity->AddComponent(transform2);
-    //entity->AddComponent(velocity);
-
-    //entityPool.Free(entity);
-    //transformPool.Free(transform2);
-
-    //LogManager::Log("Entity ptr: %p", entity);
-    //LogManager::Log("Velocity ptr: %p", velocity);
-    //LogManager::Log("Transform1 ptr: %p", transform1);
-    //LogManager::Log("Transform2 ptr: %p", transform2);
-
-    // The segmentation error is probably caused because when we exit we want to manually call free memory management
+    for (auto& transform : transformPool.GetAllocatedBlocks())
+    {
+        LOG("Transform position: %f, %f", transform->positionX, transform->positionY);
+    }
 
     return 0;
 }
