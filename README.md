@@ -8,14 +8,14 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
 - 2D only
 - ECS architecture
 
-## TODO
+## TODO MVP
 - [ ] Switch to CMake
-- [ ] Finnish ECS
-- [ ] Implement graphics library with OpenGL
-- [ ] Implement event system
-- [ ] Implement unit testing
-- [ ] Implement audio system
-- [ ] Test Engine with Git actions
+- [X] ECS
+- [ ] Graphics library/OpenGL
+- [ ] Event system
+- [ ] Unit testing
+- [ ] Audio system
+- [ ] Git Testing
 
 ## Future Improvements
 - [ ] Memory Pool
