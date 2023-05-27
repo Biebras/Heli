@@ -9,42 +9,26 @@ int main()
     auto& poolManager = MemoryManager::GetInstance();
     auto& systemManager = SystemManager::GetInstance();
 
-    //MemoryPool<Entity>& entityPool = poolManager.CreatePool<Entity>(10);
-    MemoryPool<TransformComponent>& transformPool = poolManager.CreatePool<TransformComponent>(2);
+    auto& transformPool = poolManager.CreatePool<TransformComponent>(10);
+    auto& velocityPool = poolManager.CreatePool<VelocityComponent>(10);
+    auto& entityPool = poolManager.CreatePool<Entity>(10);
 
-    //Entity* entity = entityPool.Allocate();
-    systemManager.AllocateSystem<TransformSystem>();
+    Entity* player = entityPool.Allocate();
+    Entity* enemy1 = entityPool.Allocate();
+    Entity* enemy2 = entityPool.Allocate();
+
+    player->AddComponent(transformPool.Allocate());
+
+    enemy1->AddComponent(transformPool.Allocate());
+    enemy1->AddComponent(velocityPool.Allocate());
+
+    enemy2->AddComponent(transformPool.Allocate());
+    enemy2->AddComponent(velocityPool.Allocate());
+
     systemManager.AllocateSystem<ShitSystem>();
-    //systemManager.AllocateSystem<TransformSystem>();
-    
+    systemManager.AllocateSystem<TransformSystem>();
+
     systemManager.Update();
-
-    TransformComponent* transform1 = transformPool.Allocate();
-    TransformComponent* transform2 = transformPool.Allocate();
-
-    LOG("Allocated transforms count: %d", transformPool.GetAllocatedBlocks().size());
-
-    //entity->AddComponent(transform1);
-
-    transform1->positionX = 10;
-    transform1->positionY = 20;
-
-    transform2->positionX = 30;
-    transform2->positionY = 40;
-
-    LOG("Transform1 position: %f, %f", transform1->positionX, transform1->positionY);
-    LOG("Transform2 position: %f, %f", transform2->positionX, transform2->positionY);
-
-    transformPool.Free(transform1);
-
-    LOG("Allocated transforms count: %d", transformPool.GetAllocatedBlocks().size());
-
-    TransformComponent* transform3 = transformPool.Allocate();
-
-    for (auto& transform : transformPool.GetAllocatedBlocks())
-    {
-        LOG("Transform position: %f, %f", transform->positionX, transform->positionY);
-    }
 
     return 0;
 }

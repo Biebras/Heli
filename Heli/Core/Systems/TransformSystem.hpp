@@ -11,9 +11,9 @@ namespace Heli
     class TransformSystem : public System<TransformComponent, VelocityComponent>
     {
         public:
-            virtual void OnUpdate() override
+            virtual void OnUpdate(std::vector<Entity*> entities) override
             {
-                LOG("Hello this is transform system!");
+                LOG("Hello this is transform system and I have %d entities", entities.size());
             }
     };
 }

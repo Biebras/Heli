@@ -4,10 +4,13 @@
 
 namespace Heli
 {
+    class Entity;
+
     class Component
     {
         public:
             ~Component() {};
             TypeId TypeID = UNDEFINED_TYPE;
+            Entity* ParentEntity = nullptr;
     };
 }

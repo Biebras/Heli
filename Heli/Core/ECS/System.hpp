@@ -3,8 +3,8 @@
 #include <vector>
 
 #include "ClassTypeId.hpp"
-#include "../Logging/Debug.hpp"
 #include "Entity.hpp"
+#include "../Logging/Debug.hpp"
 
 namespace Heli
 {
@@ -12,19 +12,23 @@ namespace Heli
     {
         public:
             virtual ~SystemBase() {}
-            virtual void OnUpdate() {};
+            virtual void OnUpdate(std::vector<Entity*> entities) = 0;
+            std::vector<TypeId> GetRequiredComponents() {return requiredComponents;}
             TypeId TypeID = UNDEFINED_TYPE;
+            bool Enabled = true;
+        protected:
+            // Define a vector of required component types
+            std::vector<TypeId> requiredComponents;
     };
 
     template<typename... ComponentClasses>
     class System : public SystemBase
     {
         public:
-            System() : requiredComponents{GetTypeId<ComponentClasses>()...} {}
+            System()
+            {
+                requiredComponents = {GetTypeId<ComponentClasses>()...};
+            }
             ~System() {};
-
-        protected:
-            // Define a vector of required component types
-            std::vector<TypeId> requiredComponents;
     };
 }

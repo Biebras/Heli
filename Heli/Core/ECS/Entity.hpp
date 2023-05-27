@@ -3,10 +3,12 @@
 #include <unordered_map>
 #include <typeindex>
 
-#include "Component.hpp"
 #include "ClassTypeId.hpp"
+#include "Component.hpp"
 #include "../Memory/MemoryManager.hpp"
 #include "../Logging/Debug.hpp"
+
+class Component;
 
 namespace Heli
 {
@@ -35,6 +37,10 @@ namespace Heli
 
             template <typename T>
             T* GetComponent();
+            bool ContainsComponent(TypeId typeID)
+            {
+                return components.find(typeID) != components.end();
+            }
 
             TypeId TypeID = UNDEFINED_TYPE;
 
@@ -45,20 +51,21 @@ namespace Heli
     template <typename T>
     void Entity::AddComponent(T* component)
     {
-        if (component->typeID == UNDEFINED_TYPE)
+        if (component->TypeID == UNDEFINED_TYPE)
         {
             LOG_WARNING("Can't add this component as this compoent was not allocated");
             return;
         }
 
         // Cheack if the component already exists
-        if (components[component->typeID] != nullptr)
+        if (components[component->TypeID] != nullptr)
         {
             LOG_WARNING("Can't add this component to entity because it already exists!");
             return;
         }
 
-        components[component->typeID] = component;
+        component->ParentEntity = this;
+        components[component->TypeID] = component;
     }
 
     template <typename T>
@@ -67,12 +74,14 @@ namespace Heli
         int typeID = GetTypeId<T>();
 
         // Check if the component exists
-        if (components[typeID] != nullptr)
+        if (components[typeID] == nullptr)
         {
             LOG_WARNING("Can't remove this component from entity because it doesn't exist!");
             return;
         }
 
+        Component* component = components[typeID];
+        component->ParentEntity = nullptr;
         components.erase(typeID);
     }
 

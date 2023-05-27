@@ -11,9 +11,9 @@ namespace Heli
     class ShitSystem : public System<TransformComponent>
     {
         public:
-            virtual void OnUpdate() override
+            virtual void OnUpdate(std::vector<Entity*> entities) override
             {
-                LOG("Hello this is shit system!");
+                LOG("Hello this is shit system and I have %d entities", entities.size());
             }
     };
 }

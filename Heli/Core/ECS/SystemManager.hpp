@@ -18,6 +18,8 @@ namespace Heli
 
             template<typename T>
             void AllocateSystem();
+            template<typename T>
+            void RemoveSystem();
             void Update();
 
         private:
@@ -27,8 +29,7 @@ namespace Heli
             SystemManager(const SystemManager&) = delete;
             SystemManager& operator=(const SystemManager&) = delete;
 
-            std::vector<std::unique_ptr<SystemBase>> systems;
-            std::unordered_set<TypeId> allocatedSystemTypes;
+            std::unordered_map<TypeId, std::unique_ptr<SystemBase>> systems;
     };
 
     template<typename T>
@@ -42,20 +43,44 @@ namespace Heli
         }
 
         TypeId systemTypeId = GetTypeId<T>();
+        SystemBase* systemBase = systems[systemTypeId].get();
 
-        // Check if a system of this type has already been allocated
-        if (!allocatedSystemTypes.insert(systemTypeId).second)
+        if(systemBase != nullptr && systemBase->Enabled == true)
         {
-            LOG_WARNING("SystemManager::AllocateSystem: A system of this type has already been allocated!");
+            LOG_WARNING("SystemManager::AllocateSystem: System already exists!");
             return;
         }
 
-        std::unique_ptr<T> system = std::make_unique<T>();
-        // Assign type ID
-        system->TypeID = systemTypeId;
+        if (systemBase == nullptr)
+        {
+            std::unique_ptr<T> system = std::make_unique<T>();
+            // Assign type ID
+            system->TypeID = systemTypeId;
+            // Enable the system
+            system->Enabled = true;
 
-        // Store the system in the systems vector
-        systems.push_back(std::move(system));
+            // Store the system
+            systems[systemTypeId] = std::move(system);
+        }
+        else
+        {
+            systemBase->Enabled = true;
+        }
+    }
+
+    template<typename T>
+    void SystemManager::RemoveSystem()
+    {
+        TypeId systemTypeId = GetTypeId<T>();
+        SystemBase* systemBase = systems[systemTypeId].get();
+
+        if (systemBase == nullptr)
+        {
+            LOG_WARNING("SystemManager::RemoveSystem: System does not exist!");
+            return;
+        }
+
+        systemBase->Enabled = false;
     }
 }
 

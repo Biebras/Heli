@@ -12,6 +12,10 @@ namespace Heli
         public:
             virtual ~MemoryPoolBase() = default;
             virtual void Free(void*& object) = 0;
+            std::unordered_set<void*> GetAllocatedObjects() const {return allocatedBlocks;}
+        protected:
+            // Set of allocated blocks
+            std::unordered_set<void*> allocatedBlocks;
     };
 
     /// @brief A memory pool for a specific type.
@@ -30,8 +34,6 @@ namespace Heli
             {
                 Free(reinterpret_cast<T*&>(object));
             }
-            // Function to retrieve the set of allocated blocks
-            const std::unordered_set<T*>& GetAllocatedBlocks() const { return allocatedBlocks; }
 
         private:
             T* memory;
@@ -40,9 +42,6 @@ namespace Heli
             // List of free memory addresses
             T** freeList;
             size_t availableObjects;
-
-            // Set of allocated blocks
-            std::unordered_set<T*> allocatedBlocks;
     };
 
 
