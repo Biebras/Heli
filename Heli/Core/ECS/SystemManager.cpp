@@ -3,6 +3,33 @@
 
 namespace Heli
 {
+    std::vector<Entity*> GetEntitiesToUpdate(SystemBase* systemBase, const std::unordered_set<void*>& entities)
+    {
+        std::vector<Entity*> updateEntities;
+
+        for (const auto& e : entities)
+        {
+            Entity* entity = static_cast<Entity*>(e);
+            bool pass = true;
+
+            for (const auto& requiredID : systemBase->GetRequiredComponents())
+            {
+                if (!entity->ContainsComponent(requiredID))
+                {
+                    pass = false;
+                    break;
+                }
+            }
+
+            if(pass)
+            {
+                updateEntities.push_back(entity);
+            }
+        }
+
+        return updateEntities;
+    }
+
     void SystemManager::Update()
     {
         auto& poolManager = MemoryManager::GetInstance();
@@ -12,33 +39,13 @@ namespace Heli
         {
             SystemBase* systemBase = system.get();
 
-            if (systemBase->Enabled == false)
+            if (!systemBase->Enabled)
                 continue;
 
-            auto updateEntities = new std::vector<Entity*>();
+            std::vector<Entity*> updateEntities = GetEntitiesToUpdate(systemBase, entities);
 
-            for (const auto& e : entities)
-            {
-                Entity* entity = static_cast<Entity*>(e);
-                bool pass = true;
-
-                for (const auto& requiredID : systemBase->GetRequiredComponents())
-                {
-                    if (entity->ContainsComponent(requiredID) == false)
-                    {
-                        pass = false;
-                        break;
-                    }
-                }
-
-                if(pass)
-                {
-                    updateEntities->push_back(entity);
-                }
-            }            
-
-            if(updateEntities->size() != 0)
-                systemBase->OnUpdate(*updateEntities);
+            if(!updateEntities.empty())
+                systemBase->OnUpdate(updateEntities);
         }
     }
 }

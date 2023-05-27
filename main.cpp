@@ -14,6 +14,7 @@ int main()
     auto& entityPool = poolManager.CreatePool<Entity>(10);
 
     Entity* player = entityPool.Allocate();
+    Entity* player1 = entityPool.Allocate();
     Entity* enemy1 = entityPool.Allocate();
     Entity* enemy2 = entityPool.Allocate();
 

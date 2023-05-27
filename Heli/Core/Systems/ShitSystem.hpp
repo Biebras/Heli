@@ -8,7 +8,7 @@
 
 namespace Heli
 {
-    class ShitSystem : public System<TransformComponent>
+    class ShitSystem : public System<>
     {
         public:
             virtual void OnUpdate(std::vector<Entity*> entities) override
