@@ -4,32 +4,34 @@
 
 using namespace Heli;
 
-int main()
+int main() 
 {
+    // Get references to the pool manager and system manager
     auto& poolManager = MemoryManager::GetInstance();
     auto& systemManager = SystemManager::GetInstance();
 
-    auto& transformPool = poolManager.CreatePool<TransformComponent>(10);
-    auto& velocityPool = poolManager.CreatePool<VelocityComponent>(10);
+    // Create pools for entities and components
     auto& entityPool = poolManager.CreatePool<Entity>(10);
+    auto& positionPool = poolManager.CreatePool<PositionComponent>(10);
+    auto& spritePool = poolManager.CreatePool<SpriteComponent>(10);
 
+    // Allocate systems
+    systemManager.AllocateSystem<MovementSystem>();
+    systemManager.AllocateSystem<RenderingSystem>();
+
+    // Create player entity and add components
     Entity* player = entityPool.Allocate();
-    Entity* player1 = entityPool.Allocate();
-    Entity* enemy1 = entityPool.Allocate();
-    Entity* enemy2 = entityPool.Allocate();
+    player->AddComponent(positionPool.Allocate());
+    player->AddComponent(spritePool.Allocate());
 
-    player->AddComponent(transformPool.Allocate());
+    // Create enemy entity and add components
+    Entity* enemy = entityPool.Allocate();
+    enemy->AddComponent(positionPool.Allocate());
+    enemy->AddComponent(spritePool.Allocate());
 
-    enemy1->AddComponent(transformPool.Allocate());
-    enemy1->AddComponent(velocityPool.Allocate());
-
-    enemy2->AddComponent(transformPool.Allocate());
-    enemy2->AddComponent(velocityPool.Allocate());
-
-    systemManager.AllocateSystem<ShitSystem>();
-    systemManager.AllocateSystem<TransformSystem>();
-
+    // Update systems
     systemManager.Update();
 
     return 0;
 }
+

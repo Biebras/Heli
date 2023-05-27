@@ -9,9 +9,9 @@
 #include "Core/Memory/MemoryPool.hpp"
 #include "Core/Memory/MemoryManager.hpp"
 #include "Core/ECS/SystemManager.hpp"
-#include "Core/Components/TransformComponent.hpp"
-#include "Core/Components/VelocityComponent.hpp"
-#include "Core/Systems/ShitSystem.hpp"
-#include "Core/Systems/TransformSystem.hpp"
+#include "Core/Components/PositionComponent.hpp"
+#include "Core/Components/SpriteComponent.hpp"
+#include "Core/Systems/MovementSystem.hpp"
+#include "Core/Systems/RenderingSystem.hpp"
 
 #endif
