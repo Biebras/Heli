@@ -18,6 +18,10 @@ namespace Heli
                     auto position = entity->GetComponent<PositionComponent>();
                     auto sprite = entity->GetComponent<SpriteComponent>();
 
+                    // Suppress unused variable warnings
+                    (void)position;
+                    (void)sprite;
+
                     // Render sprite at position here
                 }
 

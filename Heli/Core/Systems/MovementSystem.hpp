@@ -15,7 +15,9 @@ namespace Heli
                 for (auto entity : entities) 
                 {
                     auto position = entity->GetComponent<PositionComponent>();
-                    // Update position here
+                    
+                    position->x += 1;
+                    position->y += 1;
                 }
 
                 LOG("Updated position for %d entities", entities.size());

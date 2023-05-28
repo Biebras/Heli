@@ -12,23 +12,13 @@ class Component;
 
 namespace Heli
 {
+    /// @brief Class representing an entity
     class Entity
     {
         public:
-            Entity() {};
-            ~Entity() 
-            {
-                auto& instance = MemoryManager::GetInstance();
+            Entity() = default;
+            ~Entity();
 
-                for (auto& component : components)
-                {
-                    auto& pool = instance.GetPool(component.second->TypeID);
-                    void* ptr = component.second;
-                    pool.Free(ptr);
-                }
-
-                components.clear();
-            };
             template <typename T>
             void AddComponent(T* component);
 
@@ -37,10 +27,8 @@ namespace Heli
 
             template <typename T>
             T* GetComponent();
-            bool ContainsComponent(TypeId typeID)
-            {
-                return components.find(typeID) != components.end();
-            }
+
+            bool ContainsComponent(TypeId typeID);
 
             TypeId TypeID = UNDEFINED_TYPE;
 
@@ -48,16 +36,19 @@ namespace Heli
             std::unordered_map<TypeId, Component*> components;
     };
 
+    /// @brief Adds a component to the entity
+    /// @tparam T The type of the component to add
     template <typename T>
     void Entity::AddComponent(T* component)
     {
+        // Check if the component was allocated
         if (component->TypeID == UNDEFINED_TYPE)
         {
             LOG_WARNING("Can't add this component as this compoent was not allocated");
             return;
         }
 
-        // Cheack if the component already exists
+        // Check if the component already exists
         if (components[component->TypeID] != nullptr)
         {
             LOG_WARNING("Can't add this component to entity because it already exists!");
@@ -68,6 +59,8 @@ namespace Heli
         components[component->TypeID] = component;
     }
 
+    /// @brief Removes a component from the entity
+    /// @tparam T The type of the component to remove
     template <typename T>
     void Entity::RemoveComponent()
     {
@@ -85,6 +78,9 @@ namespace Heli
         components.erase(typeID);
     }
 
+    /// @brief Gets a component from the entity
+    /// @tparam T The type of the component to get
+    /// @return A pointer to the requested component, or `nullptr` if it doesn't exist
     template <typename T>
     T* Entity::GetComponent()
     {
