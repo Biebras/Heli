@@ -7,6 +7,7 @@ Heli is a simple and lightweight 2D game engine that uses an Entity-Component-Sy
 - Lightweight
 - 2D only
 - ECS architecture
+- Build in tweening library
 
 # Using ECS in Heli
 
@@ -81,9 +82,10 @@ In this example, the `MovementSystem` will be updated.
 - [ ] Git Testing
 
 ## Future Improvements
-- [ ] Memory Pool
-  - [ ] Allign Memory
-  - [ ] Maybe switch to smart pointers?
-  - [ ] Thread Safty
-- [ ] Memory Manager
-  - [ ] Thread Safty
+- [ ] Memory Management
+    - [ ] Allign Memory
+    - [ ] Maybe switch to smart pointers?
+    - [ ] Thread Safty
+- [ ] ECS
+    - [ ] Sparse set?
+    - [ ] Automatic allocation
