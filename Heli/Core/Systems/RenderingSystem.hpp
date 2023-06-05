@@ -11,7 +11,7 @@ namespace Heli
     class RenderingSystem : public System<PositionComponent, SpriteComponent>
     {
         public:
-            virtual void OnUpdate(std::vector<Entity*> entities) override
+            virtual void OnUpdate(std::unordered_set<Entity*> entities) override
             {
                 for (auto entity : entities) 
                 {

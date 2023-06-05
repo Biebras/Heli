@@ -16,7 +16,7 @@ namespace Heli
 
             /// @brief Pure virtual function to update the system with a vector of entities.
             /// @param entities Vector of entities to update the system with.
-            virtual void OnUpdate(std::vector<Entity*> entities) = 0;
+            virtual void OnUpdate(std::unordered_set<Entity*> entities) = 0;
 
             /// @brief Returns a vector of required component types for this system.
             /// @return Vector of required component types.

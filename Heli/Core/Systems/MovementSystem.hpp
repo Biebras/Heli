@@ -10,7 +10,7 @@ namespace Heli
     class MovementSystem : public System<PositionComponent>
     {
         public:
-            virtual void OnUpdate(std::vector<Entity*> entities) override
+            virtual void OnUpdate(std::unordered_set<Entity*> entities) override
             {
                 for (auto entity : entities) 
                 {
