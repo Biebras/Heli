@@ -73,7 +73,7 @@ In this example, the `MovementSystem` will be updated.
 # Other things
 
 ## TODO MVP
-- [ ] Switch to CMake
+- [X] Switch to CMake
 - [X] ECS
 - [ ] Graphics library/OpenGL
 - [ ] Event system
