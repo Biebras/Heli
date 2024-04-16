@@ -41,7 +41,9 @@ int main()
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
-    }    
+    }
+
+    // Everything is okay and let's create a triangle!!!!!
 
     // render loop
     // -----------

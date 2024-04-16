@@ -94,6 +94,7 @@ Heli: CMakeFiles/Heli.dir/main.cpp.o
 Heli: CMakeFiles/Heli.dir/build.make
 Heli: vendors/glfw/src/libglfw3.a
 Heli: vendors/glad/libglad.a
+Heli: vendors/glm/glm/libglm.a
 Heli: CMakeFiles/Heli.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Heli"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Heli.dir/link.txt --verbose=$(VERBOSE)

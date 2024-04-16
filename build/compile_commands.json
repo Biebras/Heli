@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/main.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/main.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp",
   "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp",
   "output": "CMakeFiles/Heli.dir/main.cpp.o"
 },
@@ -136,5 +136,11 @@
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/glad.dir/src/glad.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/src/glad.c",
   "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/src/glad.c",
   "output": "vendors/glad/CMakeFiles/glad.dir/src/glad.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -std=c++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wno-c++98-compat -Wno-c++98-compat-pedantic -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/detail/glm.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/detail/glm.cpp",
+  "output": "vendors/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
 }
 ]

@@ -18,6 +18,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/CMakeLists.txt"
   "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/docs/CMakeLists.txt"
   "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/CMakeLists.txt"
+  "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/CMakeLists.txt"
+  "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/CMakeLists.txt"
   "/opt/homebrew/Cellar/cmake/3.27.0/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
   "/opt/homebrew/Cellar/cmake/3.27.0/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.27.0/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -71,6 +73,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "vendors/glfw/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "vendors/glfw/docs/CMakeFiles/CMakeDirectoryInformation.cmake"
   "vendors/glad/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vendors/glm/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vendors/glm/glm/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -80,4 +84,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "vendors/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "vendors/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"
   "vendors/glad/CMakeFiles/glad.dir/DependInfo.cmake"
+  "vendors/glm/glm/CMakeFiles/glm.dir/DependInfo.cmake"
   )

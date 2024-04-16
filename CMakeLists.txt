@@ -7,10 +7,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Sub-directories
 add_subdirectory(vendors/glfw)
 add_subdirectory(vendors/glad)
+add_subdirectory(vendors/glm)
 
 # Executables
 add_executable(${PROJECT_NAME} main.cpp)
-
+ 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} glfw glad)
+target_link_libraries(${PROJECT_NAME} glfw glad glm)
 

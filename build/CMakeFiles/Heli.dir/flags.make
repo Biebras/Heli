@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include
+CXX_INCLUDES = -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
 

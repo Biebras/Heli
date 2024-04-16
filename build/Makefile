@@ -226,6 +226,19 @@ glad/fast:
 	$(MAKE) $(MAKESILENT) -f vendors/glad/CMakeFiles/glad.dir/build.make vendors/glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
+#=============================================================================
+# Target rules for targets named glm
+
+# Build rule for target.
+glm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm
+.PHONY : glm
+
+# fast build rule for target.
+glm/fast:
+	$(MAKE) $(MAKESILENT) -f vendors/glm/glm/CMakeFiles/glm.dir/build.make vendors/glm/glm/CMakeFiles/glm.dir/build
+.PHONY : glm/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -267,6 +280,7 @@ help:
 	@echo "... Heli"
 	@echo "... glad"
 	@echo "... glfw"
+	@echo "... glm"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

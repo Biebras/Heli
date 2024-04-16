@@ -33,3 +33,16 @@
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glad/CMakeFiles/install.dir
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glad/CMakeFiles/install/local.dir
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glad/CMakeFiles/install/strip.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/edit_cache.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/rebuild_cache.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/list_install_components.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/install.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/install/local.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/CMakeFiles/install/strip.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/glm.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/edit_cache.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/rebuild_cache.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/list_install_components.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/install.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/install/local.dir
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm/CMakeFiles/install/strip.dir
