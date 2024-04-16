@@ -1,3 +1,0 @@
-/Users/sauliusvincevicius/Documents/Personal Projects/Heli Engine/Build/CMakeFiles/Heli.dir
-/Users/sauliusvincevicius/Documents/Personal Projects/Heli Engine/Build/CMakeFiles/edit_cache.dir
-/Users/sauliusvincevicius/Documents/Personal Projects/Heli Engine/Build/CMakeFiles/rebuild_cache.dir
