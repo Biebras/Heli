@@ -239,6 +239,30 @@ glm/fast:
 	$(MAKE) $(MAKESILENT) -f vendors/glm/glm/CMakeFiles/glm.dir/build.make vendors/glm/glm/CMakeFiles/glm.dir/build
 .PHONY : glm/fast
 
+heli/src/graphics/graphics.o: heli/src/graphics/graphics.cpp.o
+.PHONY : heli/src/graphics/graphics.o
+
+# target to build an object file
+heli/src/graphics/graphics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o
+.PHONY : heli/src/graphics/graphics.cpp.o
+
+heli/src/graphics/graphics.i: heli/src/graphics/graphics.cpp.i
+.PHONY : heli/src/graphics/graphics.i
+
+# target to preprocess a source file
+heli/src/graphics/graphics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.i
+.PHONY : heli/src/graphics/graphics.cpp.i
+
+heli/src/graphics/graphics.s: heli/src/graphics/graphics.cpp.s
+.PHONY : heli/src/graphics/graphics.s
+
+# target to generate assembly for a file
+heli/src/graphics/graphics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.s
+.PHONY : heli/src/graphics/graphics.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -281,6 +305,9 @@ help:
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... glm"
+	@echo "... heli/src/graphics/graphics.o"
+	@echo "... heli/src/graphics/graphics.i"
+	@echo "... heli/src/graphics/graphics.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

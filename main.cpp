@@ -1,5 +1,13 @@
+#include "glm/ext/matrix_clip_space.hpp"
+#include "glm/ext/matrix_float4x4.hpp"
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/fwd.hpp"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
 
@@ -11,22 +19,27 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+glm::vec3 quadPos(0, 0, 0);
+glm::mat4 projection = glm::mat4(1);
+
 int main()
 {
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
-    Shader triangleShader("./assets/shaders/triangle.vert", "./assets/shaders/triangle.frag");
+    Shader triangleShader("./assets/shaders/test.glsl");
 
     float vertices[] = 
     {
-        -0.5f, -0.5f, 0.0f, // Bottom left
-        0.0f,  0.5f, 0.0f, // Top middle
-        0.5f, -0.5f, 0.0f  // Bottom right
+        -0.5f, -0.5f, 0.0f,  // Bottom left
+        -0.5f,  0.5f, 0.0f,  // Top left
+         0.5f, -0.5f, 0.0f,  // Bottom right
+         0.5f,  0.5,  0.0f   // Top Right
     };
 
     unsigned int indices[] = 
     {
-        0, 1, 2
+        0, 2, 1,
+        1, 2, 3
     };
 
     unsigned int VAO, VBO, EBO;
@@ -59,14 +72,30 @@ int main()
         // -----
         processInput(window);
 
+        // transformations
+        // create transformations
+        glm::mat4 view          = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        glm::mat4 projection    = glm::mat4(1.0f);
+        glm::mat4 model         = glm::mat4(1.0f);
+        projection  = glm::ortho(-((float)SCR_WIDTH / 100 / 2), 
+                                (float)SCR_WIDTH / 100 / 2,
+                                -((float)SCR_HEIGHT / 100 / 2), 
+                                (float)SCR_HEIGHT / 100 / 2, -100.0f, 100.0f);
+        view        = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        model       = glm::translate(model, quadPos);
+
         // render
         // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         triangleShader.Use();
+        triangleShader.SetMatrix4("projection", projection);
+        triangleShader.SetMatrix4("view", view);
+        triangleShader.SetMatrix4("model", model);
+
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

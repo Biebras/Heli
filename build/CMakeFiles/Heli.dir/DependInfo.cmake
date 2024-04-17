@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/graphics.cpp" "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o" "gcc" "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o.d"
   "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp" "CMakeFiles/Heli.dir/main.cpp.o" "gcc" "CMakeFiles/Heli.dir/main.cpp.o.d"
   )
 
