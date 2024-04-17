@@ -9,6 +9,9 @@ add_subdirectory(vendors/glfw)
 add_subdirectory(vendors/glad)
 add_subdirectory(vendors/glm)
 
+# Headers
+include_directories(${PROJECT_SOURCE_DIR}/heli/include)
+
 # Executables
 add_executable(${PROJECT_NAME} main.cpp)
  
