@@ -756,6 +756,7 @@ CMakeFiles/Heli.dir/main.cpp.o: /Users/sauliusvincevicius/Documents/Projects/Hel
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stdint.h \
+  /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include/graphics/graphics.h \
   /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include/graphics/shader.h \
   /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include/KHR/khrplatform.h \
   /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include/glad/glad.h \
@@ -1195,6 +1196,8 @@ CMakeFiles/Heli.dir/main.cpp.o: /Users/sauliusvincevicius/Documents/Projects/Hel
 
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/ext/matrix_double2x2.hpp:
 
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/ext/matrix_clip_space.inl:
+
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/ext/vector_uint2.hpp:
 
 /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/ext/vector_int4.hpp:
@@ -1516,6 +1519,8 @@ CMakeFiles/Heli.dir/main.cpp.o: /Users/sauliusvincevicius/Documents/Projects/Hel
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/wchar.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/limits:
+
+/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include/graphics/graphics.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iomanip:
 
@@ -2364,8 +2369,6 @@ CMakeFiles/Heli.dir/main.cpp.o: /Users/sauliusvincevicius/Documents/Projects/Hel
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_is_permutation.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__chrono/day.h:
-
-/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/ext/matrix_clip_space.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_unique_copy.h:
 
