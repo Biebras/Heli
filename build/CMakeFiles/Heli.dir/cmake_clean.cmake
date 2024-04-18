@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o.d"
   "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o"
   "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o.d"
   "CMakeFiles/Heli.dir/main.cpp.o"

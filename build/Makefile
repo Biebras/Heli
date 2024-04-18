@@ -239,6 +239,30 @@ glm/fast:
 	$(MAKE) $(MAKESILENT) -f vendors/glm/glm/CMakeFiles/glm.dir/build.make vendors/glm/glm/CMakeFiles/glm.dir/build
 .PHONY : glm/fast
 
+heli/src/graphics/camera.o: heli/src/graphics/camera.cpp.o
+.PHONY : heli/src/graphics/camera.o
+
+# target to build an object file
+heli/src/graphics/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o
+.PHONY : heli/src/graphics/camera.cpp.o
+
+heli/src/graphics/camera.i: heli/src/graphics/camera.cpp.i
+.PHONY : heli/src/graphics/camera.i
+
+# target to preprocess a source file
+heli/src/graphics/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.i
+.PHONY : heli/src/graphics/camera.cpp.i
+
+heli/src/graphics/camera.s: heli/src/graphics/camera.cpp.s
+.PHONY : heli/src/graphics/camera.s
+
+# target to generate assembly for a file
+heli/src/graphics/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.s
+.PHONY : heli/src/graphics/camera.cpp.s
+
 heli/src/graphics/graphics.o: heli/src/graphics/graphics.cpp.o
 .PHONY : heli/src/graphics/graphics.o
 
@@ -305,6 +329,9 @@ help:
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... glm"
+	@echo "... heli/src/graphics/camera.o"
+	@echo "... heli/src/graphics/camera.i"
+	@echo "... heli/src/graphics/camera.s"
 	@echo "... heli/src/graphics/graphics.o"
 	@echo "... heli/src/graphics/graphics.i"
 	@echo "... heli/src/graphics/graphics.s"

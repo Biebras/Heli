@@ -1,7 +1,3 @@
-#include "glm/ext/matrix_clip_space.hpp"
-#include "glm/ext/matrix_float4x4.hpp"
-#include "glm/ext/matrix_transform.hpp"
-#include "glm/fwd.hpp"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -10,6 +6,7 @@
 
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
+#include <graphics/camera.hpp>
 
 #include <iostream>
 
@@ -17,7 +14,8 @@ void processInput(GLFWwindow *window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_HEIGHT = 500;
+float zoomLevel = 20;
 
 glm::vec3 quadPos(0, 0, 0);
 glm::mat4 projection = glm::mat4(1);
@@ -27,6 +25,7 @@ int main()
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
     Shader triangleShader("./assets/shaders/test.glsl");
+    Camera camera(12);
 
     float vertices[] = 
     {
@@ -63,7 +62,6 @@ int main()
     glBindVertexArray(0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -74,15 +72,10 @@ int main()
 
         // transformations
         // create transformations
-        glm::mat4 view          = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        glm::mat4 projection    = glm::mat4(1.0f);
-        glm::mat4 model         = glm::mat4(1.0f);
-        projection  = glm::ortho(-((float)SCR_WIDTH / 100 / 2), 
-                                (float)SCR_WIDTH / 100 / 2,
-                                -((float)SCR_HEIGHT / 100 / 2), 
-                                (float)SCR_HEIGHT / 100 / 2, -100.0f, 100.0f);
-        view        = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        model       = glm::translate(model, quadPos);
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, quadPos);
+
+        camera.UpdateCamera(screenAspectRatio);
 
         // render
         // ------
@@ -90,9 +83,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         triangleShader.Use();
-        triangleShader.SetMatrix4("projection", projection);
-        triangleShader.SetMatrix4("view", view);
-        triangleShader.SetMatrix4("model", model);
+        triangleShader.SetMatrix4("MVP", camera.GetVP() * model);
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

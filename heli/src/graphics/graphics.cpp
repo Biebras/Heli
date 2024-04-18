@@ -1,15 +1,33 @@
+#include <glad/glad.h>
+#include "GLFW/glfw3.h"
+#include "core/event.hpp"
 #include <graphics/graphics.h>
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+float screenAspectRatio = 0;
+Event<int, int> ScreenSizeChange;
+
+void SetAspectRatio(int width, int height)
+{
+    screenAspectRatio = (float)width / (float)height;
+}
+
+void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     // make sure the viewport matches the new window dimensions; note that width and 
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
+
+    SetAspectRatio(width, height);
+    std::cout << "Starting an Invoke" << std::endl;
+    ScreenSizeChange.Invoke(width, height);
+    ScreenSizeChange.Test();
 }
 
 GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
-{ 
+{
+    SetAspectRatio(screen_width, screen_height);
+
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -24,6 +42,7 @@ GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
     // glfw window creation
     // --------------------
     GLFWwindow* window = glfwCreateWindow(screen_width, screen_height, title, NULL, NULL);
+
     if (window == NULL) 
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -32,7 +51,7 @@ GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
     }
 
     glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, Framebuffer_size_callback);
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------

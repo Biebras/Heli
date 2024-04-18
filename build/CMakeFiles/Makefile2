@@ -186,12 +186,12 @@ CMakeFiles/Heli.dir/all: vendors/glad/CMakeFiles/glad.dir/all
 CMakeFiles/Heli.dir/all: vendors/glm/glm/CMakeFiles/glm.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Heli.dir/build.make CMakeFiles/Heli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=1,2,3 "Built target Heli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=1,2,3,4 "Built target Heli"
 .PHONY : CMakeFiles/Heli.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Heli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Heli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles 0
 .PHONY : CMakeFiles/Heli.dir/rule
@@ -238,7 +238,7 @@ vendors/glfw/CMakeFiles/uninstall.dir/clean:
 vendors/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendors/glfw/src/CMakeFiles/glfw.dir/build.make vendors/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors/glfw/src/CMakeFiles/glfw.dir/build.make vendors/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28 "Built target glfw"
 .PHONY : vendors/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
@@ -264,7 +264,7 @@ vendors/glfw/src/CMakeFiles/glfw.dir/clean:
 vendors/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendors/glfw/src/CMakeFiles/update_mappings.dir/build.make vendors/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors/glfw/src/CMakeFiles/update_mappings.dir/build.make vendors/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=30 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=31 "Built target update_mappings"
 .PHONY : vendors/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
@@ -290,7 +290,7 @@ vendors/glfw/src/CMakeFiles/update_mappings.dir/clean:
 vendors/glad/CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendors/glad/CMakeFiles/glad.dir/build.make vendors/glad/CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors/glad/CMakeFiles/glad.dir/build.make vendors/glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=4,5 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=5,6 "Built target glad"
 .PHONY : vendors/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
@@ -316,7 +316,7 @@ vendors/glad/CMakeFiles/glad.dir/clean:
 vendors/glm/glm/CMakeFiles/glm.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendors/glm/glm/CMakeFiles/glm.dir/build.make vendors/glm/glm/CMakeFiles/glm.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendors/glm/glm/CMakeFiles/glm.dir/build.make vendors/glm/glm/CMakeFiles/glm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=28,29 "Built target glm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/CMakeFiles --progress-num=29,30 "Built target glm"
 .PHONY : vendors/glm/glm/CMakeFiles/glm.dir/all
 
 # Build rule for subdir invocation for target.
