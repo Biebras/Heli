@@ -5,11 +5,13 @@
 #include <iostream>
 
 Event<int, int> ScreenSizeChangeEvent;
-int ScreenAspectRatio = 0;
+Event<float> ScreenAspectChangeEvent;
+float ScreenAspectRatio = 0;
 
 void SetAscpectRatio(int width, int height)
 {
     ScreenAspectRatio = (float)width / (float)height;
+    ScreenAspectChangeEvent.Invoke(ScreenAspectRatio);
 }
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height)

@@ -6,14 +6,14 @@ Camera::Camera()
 {
     _zoomLevel = 12;
     UpdateProjection(ScreenAspectRatio); 
-    _onScreenUpdateEventId = ScreenSizeChangeEvent.Subscribe(MethodSubscriber(OnScreenSizeUpdate)); 
+    _onScreenUpdateEventId = ScreenAspectChangeEvent.Subscribe(MethodSubscriber(OnScreenAspectChange)); 
 }
 
 Camera::Camera(float zoomLevel)
 {
     _zoomLevel = zoomLevel;
     UpdateProjection(ScreenAspectRatio); 
-    _onScreenUpdateEventId = ScreenSizeChangeEvent.Subscribe(MethodSubscriber(OnScreenSizeUpdate)); 
+    _onScreenUpdateEventId = ScreenAspectChangeEvent.Subscribe(MethodSubscriber(OnScreenAspectChange)); 
 }
 
 Camera::~Camera()
@@ -29,17 +29,16 @@ glm::mat4 Camera::GetVP()
     return _projection * view;
 }
 
-void Camera::UpdateProjection(int aspectRatio)
+void Camera::UpdateProjection(float aspectRatio)
 {
     _projection  = glm::ortho(-aspectRatio * _zoomLevel, 
                                aspectRatio * _zoomLevel, 
                               -_zoomLevel, _zoomLevel, -100.0f, 100.0f);
 }
 
-void Camera::OnScreenSizeUpdate(int width, int height)
+void Camera::OnScreenAspectChange(float aspect)
 {
-    float aspect = (float)width / (float)height;
-    UpdateProjection(aspect);
+    UpdateProjection(aspect); 
 }
 
 void Camera::SetZoomLevel(float zoomLevel)

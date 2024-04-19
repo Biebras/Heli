@@ -1,7 +1,6 @@
 #ifndef EVENT_HPP
 #define EVENT_HPP
 
-#include <cstdio>
 #include <unordered_map>
 #include <functional>
 
@@ -15,19 +14,19 @@ class Event
 
         int Subscribe(const Listener &listener) 
         {
-            listenerId++;
-            listeners[listenerId] = listener;
-            return listenerId;
+            _listenerId++;
+            _listeners[_listenerId] = listener;
+            return _listenerId;
         }
 
         void Unsubscribe(int listenerId)
         {
-            listeners.erase(listenerId);
+            _listeners.erase(listenerId);
         }
 
         void Invoke(Args... args) 
         {
-            auto tmpListeners = listeners;
+            auto tmpListeners = _listeners;
 
             for (auto& listener : tmpListeners) 
             {
@@ -35,8 +34,8 @@ class Event
             }
         }
     private:
-        int listenerId = 0;
-        std::unordered_map<int, Listener> listeners;
+        int _listenerId = 0;
+        std::unordered_map<int, Listener> _listeners;
 };
 
 #endif
