@@ -10,11 +10,13 @@ class Camera
     public:
         Camera();
         Camera(float zoomLevel);
+        ~Camera();
         glm::mat4 GetVP();
-        void UpdateCamera(float aspectRatio);
+        void UpdateCamera(int width, int height);
         void SetZoomLevel(float zoomLevel);
 
     private:
+        int _onScreenUpdateEventId;
         float _zoomLevel;
         glm::mat4 _projection    = glm::mat4(1.0f);
 };

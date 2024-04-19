@@ -1,42 +1,42 @@
 #ifndef EVENT_HPP
 #define EVENT_HPP
 
-#include <cstdio>
-#include <vector>
-#include <iostream>
+#include <unordered_map>
+#include <functional>
+
+#define MethodSubscriber(fn) [this](auto... args){this->fn(args...);}
 
 template<typename... Args>
 class Event
 {
     public:
-        using Listener = void(*)(Args ...);
+        using Listener = std::function<void(Args ...)>;
 
-        void Test()
+        int Subscribe(const Listener &listener) 
         {
-            std::cout << "Testing" << std::endl;
+            listenerId++;
+            listeners[listenerId] = listener;
+            printf("Id: %d\n", listenerId);
+            return listenerId;
         }
 
-        void Subscribe(Listener listener) 
+        void Unsubscribe(int listenerId)
         {
-            std::cout << listener << std::endl;
-            listeners.push_back(listener);
-        }
-
-        void Unsubscribe(Listener listener)
-        {
-            listeners.erase(std::remove(listeners.begin(), listeners.end(), listener), listeners.end());
+            printf("Id: %d\n", listenerId);
+            printf("Listener: %p\n", &listeners[listenerId]);
+            listeners.erase(listenerId);
         }
 
         void Invoke(Args... args) 
         {
             for (auto& listener : listeners) 
             {
-                listener(args...);
-                std::cout << "Invoked" << std::endl;
+                listener.second(args...);
             }
         }
     private:
-        std::vector<Listener> listeners;
+        int listenerId = 0;
+        std::unordered_map<int, Listener> listeners;
 };
 
 #endif

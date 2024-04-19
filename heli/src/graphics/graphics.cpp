@@ -4,13 +4,7 @@
 #include <graphics/graphics.h>
 #include <iostream>
 
-float screenAspectRatio = 0;
-Event<int, int> ScreenSizeChange;
-
-void SetAspectRatio(int width, int height)
-{
-    screenAspectRatio = (float)width / (float)height;
-}
+Event<int, int> ScreenSizeChangeEvent;
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -18,16 +12,11 @@ void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 
-    SetAspectRatio(width, height);
-    std::cout << "Starting an Invoke" << std::endl;
-    ScreenSizeChange.Invoke(width, height);
-    ScreenSizeChange.Test();
+    ScreenSizeChangeEvent.Invoke(width, height);
 }
 
 GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
 {
-    SetAspectRatio(screen_width, screen_height);
-
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();

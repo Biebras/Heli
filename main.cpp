@@ -75,7 +75,7 @@ int main()
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, quadPos);
 
-        camera.UpdateCamera(screenAspectRatio);
+        //camera.UpdateCamera(SCR_WIDTH, SCR_HEIGHT);
 
         // render
         // ------

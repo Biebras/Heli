@@ -5,8 +5,7 @@
 #include <GLFW/glfw3.h>
 #include <core/event.hpp>
 
-extern float screenAspectRatio;
-extern Event<int, int> ScreenSizeChange;
+extern Event<int, int> ScreenSizeChangeEvent;
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height);
 GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title);
