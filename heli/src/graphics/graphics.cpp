@@ -5,9 +5,17 @@
 #include <iostream>
 
 Event<int, int> ScreenSizeChangeEvent;
+int ScreenAspectRatio = 0;
+
+void SetAscpectRatio(int width, int height)
+{
+    ScreenAspectRatio = (float)width / (float)height;
+}
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
+    SetAscpectRatio(width, height);
+
     // make sure the viewport matches the new window dimensions; note that width and 
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
@@ -17,6 +25,8 @@ void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
 {
+    SetAscpectRatio(screen_width, screen_height);
+
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();

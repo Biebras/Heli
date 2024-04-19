@@ -1,22 +1,19 @@
 #include "core/event.hpp"
 #include <graphics/camera.hpp>
 #include <graphics/graphics.h>
-#include <iostream>
-
-void OnScreenSizeChange(int width, int height)
-{
-    std::cout << "Size Received" << std::endl;
-}
 
 Camera::Camera()
 {
     _zoomLevel = 12;
+    UpdateProjection(ScreenAspectRatio); 
+    _onScreenUpdateEventId = ScreenSizeChangeEvent.Subscribe(MethodSubscriber(OnScreenSizeUpdate)); 
 }
 
 Camera::Camera(float zoomLevel)
 {
     _zoomLevel = zoomLevel;
-    _onScreenUpdateEventId = ScreenSizeChangeEvent.Subscribe(MethodSubscriber(UpdateCamera)); 
+    UpdateProjection(ScreenAspectRatio); 
+    _onScreenUpdateEventId = ScreenSizeChangeEvent.Subscribe(MethodSubscriber(OnScreenSizeUpdate)); 
 }
 
 Camera::~Camera()
@@ -32,16 +29,17 @@ glm::mat4 Camera::GetVP()
     return _projection * view;
 }
 
-void Camera::UpdateCamera(int width, int height)
+void Camera::UpdateProjection(int aspectRatio)
 {
-    printf("Hello?\n");
-    float aspectRatio = (float)width / (float)height;
-
     _projection  = glm::ortho(-aspectRatio * _zoomLevel, 
                                aspectRatio * _zoomLevel, 
                               -_zoomLevel, _zoomLevel, -100.0f, 100.0f);
+}
 
-    ScreenSizeChangeEvent.Unsubscribe(_onScreenUpdateEventId);
+void Camera::OnScreenSizeUpdate(int width, int height)
+{
+    float aspect = (float)width / (float)height;
+    UpdateProjection(aspect);
 }
 
 void Camera::SetZoomLevel(float zoomLevel)

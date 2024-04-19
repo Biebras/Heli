@@ -12,7 +12,8 @@ class Camera
         Camera(float zoomLevel);
         ~Camera();
         glm::mat4 GetVP();
-        void UpdateCamera(int width, int height);
+        void UpdateProjection(int aspectRatio);
+        void OnScreenSizeUpdate(int width, int height);
         void SetZoomLevel(float zoomLevel);
 
     private:

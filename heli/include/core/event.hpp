@@ -1,6 +1,7 @@
 #ifndef EVENT_HPP
 #define EVENT_HPP
 
+#include <cstdio>
 #include <unordered_map>
 #include <functional>
 
@@ -16,20 +17,19 @@ class Event
         {
             listenerId++;
             listeners[listenerId] = listener;
-            printf("Id: %d\n", listenerId);
             return listenerId;
         }
 
         void Unsubscribe(int listenerId)
         {
-            printf("Id: %d\n", listenerId);
-            printf("Listener: %p\n", &listeners[listenerId]);
             listeners.erase(listenerId);
         }
 
         void Invoke(Args... args) 
         {
-            for (auto& listener : listeners) 
+            auto tmpListeners = listeners;
+
+            for (auto& listener : tmpListeners) 
             {
                 listener.second(args...);
             }
