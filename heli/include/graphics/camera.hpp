@@ -11,6 +11,7 @@ class Camera
         Camera();
         Camera(float zoomLevel);
         ~Camera();
+        void SetCameraPos(glm::vec3 pos);
         glm::mat4 GetVP();
         void UpdateProjection(float aspectRatio);
         void OnScreenAspectChange(float aspect);
@@ -19,6 +20,7 @@ class Camera
     private:
         int _onScreenUpdateEventId;
         float _zoomLevel;
+        glm::vec3 _cameraPos = glm::vec3(1.0f); 
         glm::mat4 _projection = glm::mat4(1.0f);
 };
 
