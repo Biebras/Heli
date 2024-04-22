@@ -5,6 +5,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <core/game.hpp>
+#include <core/game_object.hpp>
 #include <graphics/renderer.hpp>
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
@@ -33,10 +34,12 @@ int main()
     Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
+    GameObject *quad = new GameObject();
+
     Shader shader("./assets/shaders/test.glsl");
     Camera camera(12);
     camera.ActivateCamera();
-    Renderer *quad = new Renderer();
+    Renderer *quadRenderer = new Renderer();
 
     std::vector<float> vertices = 
     {
@@ -52,7 +55,7 @@ int main()
         1, 2, 3
     };
 
-    quad->CreateMesh(vertices, indices);
+    quadRenderer->CreateMesh(vertices, indices);
 
     // render loop
     // -----------
@@ -80,7 +83,7 @@ int main()
 
         shader.Use();
         shader.SetMatrix4("MVP", game.ActiveCamera->GetVP() * model);
-        quad->Draw(shader);
+        quadRenderer->Draw(shader);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -90,7 +93,7 @@ int main()
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
-    delete quad;
+    delete quadRenderer;
 
     glfwTerminate();
     return 0;
