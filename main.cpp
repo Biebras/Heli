@@ -1,10 +1,10 @@
-#include "graphics/renderer.hpp"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <core/game.hpp>
 #include <graphics/renderer.hpp>
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
@@ -30,10 +30,12 @@ float lastFrame = 0;
 
 int main()
 {
+    Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
     Shader shader("./assets/shaders/test.glsl");
     Camera camera(12);
+    camera.ActivateCamera();
     Renderer *quad = new Renderer();
 
     std::vector<float> vertices = 
@@ -60,7 +62,7 @@ int main()
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
-        // input
+        // Update
         // -----
         processInput(window);
 
@@ -77,7 +79,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         shader.Use();
-        shader.SetMatrix4("MVP", camera.GetVP() * model);
+        shader.SetMatrix4("MVP", game.ActiveCamera->GetVP() * model);
         quad->Draw(shader);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)

@@ -17,6 +17,8 @@ include_directories(${PROJECT_SOURCE_DIR}/heli/include)
 add_executable(${PROJECT_NAME} main.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/graphics.cpp 
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/camera.cpp 
+    ${PROJECT_SOURCE_DIR}/heli/src/core/event_manager.cpp
+    ${PROJECT_SOURCE_DIR}/heli/src/core/game.cpp
     )
  
 # Link libraries

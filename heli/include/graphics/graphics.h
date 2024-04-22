@@ -3,10 +3,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <core/event.hpp>
 
-extern Event<int, int> ScreenSizeChangeEvent;
-extern Event<float> ScreenAspectChangeEvent;
 extern float ScreenAspectRatio;
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height);

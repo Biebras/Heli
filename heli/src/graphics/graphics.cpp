@@ -1,17 +1,16 @@
 #include <glad/glad.h>
 #include "GLFW/glfw3.h"
-#include "core/event.hpp"
+
+#include <core/event_manager.h>
 #include <graphics/graphics.h>
 #include <iostream>
 
-Event<int, int> ScreenSizeChangeEvent;
-Event<float> ScreenAspectChangeEvent;
 float ScreenAspectRatio = 0;
 
 void SetAscpectRatio(int width, int height)
 {
     ScreenAspectRatio = (float)width / (float)height;
-    ScreenAspectChangeEvent.Invoke(ScreenAspectRatio);
+    windowEvents.OnAspectRatioChange.Invoke(ScreenAspectRatio);
 }
 
 void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -22,7 +21,7 @@ void Framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 
-    ScreenSizeChangeEvent.Invoke(width, height);
+    windowEvents.OnSizeChange.Invoke(width, height);
 }
 
 GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)

@@ -1,24 +1,30 @@
-#include "core/event.hpp"
+#include <core/event.hpp>
+#include <core/event_manager.h>
 #include <graphics/camera.hpp>
 #include <graphics/graphics.h>
 
 Camera::Camera()
 {
     _zoomLevel = 12;
-    UpdateProjection(ScreenAspectRatio); 
-    _onScreenUpdateEventId = ScreenAspectChangeEvent.Subscribe(MethodSubscriber(OnScreenAspectChange)); 
+    UpdateProjection(ScreenAspectRatio);
+    _onScreenAspectUpdateId = windowEvents.OnAspectRatioChange.Subscribe(MethodSubscriber(OnScreenAspectChange));
 }
 
 Camera::Camera(float zoomLevel)
 {
     _zoomLevel = zoomLevel;
     UpdateProjection(ScreenAspectRatio); 
-    _onScreenUpdateEventId = ScreenAspectChangeEvent.Subscribe(MethodSubscriber(OnScreenAspectChange)); 
+    _onScreenAspectUpdateId = windowEvents.OnAspectRatioChange.Subscribe(MethodSubscriber(OnScreenAspectChange));
 }
 
 Camera::~Camera()
 {
-   ScreenSizeChangeEvent.Unsubscribe(_onScreenUpdateEventId); 
+    windowEvents.OnAspectRatioChange.Unsubscribe(_onScreenAspectUpdateId);
+}
+
+void Camera::ActivateCamera()
+{
+    cameraEvents.OnActivate.Invoke(this);    
 }
 
 glm::mat4 Camera::GetVP()
