@@ -6,13 +6,11 @@
 
 #include <core/game.hpp>
 #include <core/game_object.hpp>
-#include <graphics/renderer.hpp>
+#include <core/component.hpp>
+#include <graphics/quad.hpp>
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
 #include <graphics/camera.hpp>
-
-#include <iostream>
-#include <vector>
 
 void processInput(GLFWwindow *window);
 
@@ -23,39 +21,26 @@ float zoomLevel = 20;
 
 glm::vec3 cameraPos(0, 0, 0);
 glm::vec3 quadPos(0, 0, 0);
-glm::mat4 projection = glm::mat4(1);
 
 //time 
 float deltaTime = 0;
 float lastFrame = 0;
+
+GameObject *quad = new GameObject();
 
 int main()
 {
     Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
-    GameObject *quad = new GameObject();
-
     Shader shader("./assets/shaders/test.glsl");
     Camera camera(12);
     camera.ActivateCamera();
-    Renderer *quadRenderer = new Renderer();
 
-    std::vector<float> vertices = 
-    {
-        -0.5f, -0.5f, 0.0f,  // Bottom left
-        -0.5f,  0.5f, 0.0f,  // Top left
-         0.5f, -0.5f, 0.0f,  // Bottom right
-         0.5f,  0.5,  0.0f   // Top Right
-    };
-
-    std::vector<uint> indices = 
-    {
-        0, 2, 1,
-        1, 2, 3
-    };
-
-    quadRenderer->CreateMesh(vertices, indices);
+    Quad *quadComponent = new Quad(&shader);
+    quad->AddComponent(static_cast<Component*>(quadComponent));
+    
+    quad->Start();
 
     // render loop
     // -----------
@@ -69,11 +54,6 @@ int main()
         // -----
         processInput(window);
 
-        // transformations
-        // create transformations
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, quadPos);
-
         camera.SetCameraPos(cameraPos);
 
         // render
@@ -81,10 +61,9 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        shader.Use();
-        shader.SetMatrix4("MVP", game.ActiveCamera->GetVP() * model);
-        quadRenderer->Draw(shader);
+        quad->Update();
 
+        quad->Draw();
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
@@ -93,7 +72,7 @@ int main()
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
-    delete quadRenderer;
+    delete quad;
 
     glfwTerminate();
     return 0;
@@ -105,4 +84,10 @@ void processInput(GLFWwindow *window)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+       quad->transform->Position.x += 1 * deltaTime; 
+
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+       quad->transform->Position.x -= 1 * deltaTime; 
 }

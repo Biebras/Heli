@@ -4,13 +4,20 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <core/game.hpp>
+#include <core/game_object.hpp>
+#include <core/component.hpp>
+#include <core/transform.hpp>
 #include <graphics/shader.h>
 #include <vector>
 
-class Renderer
+class Renderer : public Component
 {
     public:
-        Renderer() = default;
+        Renderer(Shader *shader)
+        {
+            _shader = shader;  
+        }
         ~Renderer()
         {
             glDeleteVertexArrays(1, &_VAO);
@@ -41,12 +48,15 @@ class Renderer
             _indicesCount = indices.size();
         }
 
-        void Draw(Shader &shader)
+        void Draw() override
         {
+            _shader->Use();
+            _shader->SetMatrix4("MVP", parent->transform->GetModel() * Game::Get().ActiveCamera->GetVP());
             glBindVertexArray(_VAO);
             glDrawElements(GL_TRIANGLES, _indicesCount, GL_UNSIGNED_INT, 0);
         }
     private:
+        Shader* _shader;
         unsigned int _VAO, _VBO, _EBO; 
         int _indicesCount;
 };
