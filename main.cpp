@@ -17,7 +17,7 @@ void processInput(GLFWwindow *window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 500;
-float zoomLevel = 20;
+float zoomLevel = 0.5f;
 
 glm::vec3 cameraPos(0, 0, 0);
 glm::vec3 quadPos(0, 0, 0);
@@ -33,8 +33,8 @@ int main()
     Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
-    Shader shader("./assets/shaders/test.glsl");
-    Camera camera(12);
+    Shader shader("./heli/assets/shaders/circle.glsl");
+    Camera camera(zoomLevel);
     camera.ActivateCamera();
 
     Quad *quadComponent = new Quad(&shader);
@@ -58,8 +58,11 @@ int main()
 
         // render
         // ------
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+        glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
 
         quad->Update();
 
