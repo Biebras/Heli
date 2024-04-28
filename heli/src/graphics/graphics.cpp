@@ -1,8 +1,9 @@
 #include <glad/glad.h>
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 #include <core/event_manager.h>
 #include <graphics/graphics.h>
+#include <graphics/shapes.h>
 #include <iostream>
 
 float ScreenAspectRatio = 0;
@@ -56,10 +57,10 @@ GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        exit(-1); 
-    }
+    { std::cout << "Failed to initialize GLAD" << std::endl; exit(-1); }
+
+    //Other Init
+    InitShapes();
 
     return window;
 }

@@ -16,10 +16,14 @@ void main()
 #shader fragment
 #version 410 core
 
-#define EDGE_FADE 0.005
+#define EDGE_FADE 0.01
 #define RADIUS 0.25
 
 in vec2 uv;
+
+uniform vec4 BaseColor;
+uniform vec4 OutlineColor;
+uniform float Thickness;
 
 out vec4 result;
 
@@ -29,13 +33,11 @@ void main()
 
     float r = cUV.x * cUV.x + cUV.y * cUV.y;
 
-    float thickness = 0.005;
-
     float big_circle = smoothstep(RADIUS, RADIUS - EDGE_FADE, r);
 
-    vec4 small_circle = vec4(smoothstep(RADIUS - thickness, RADIUS - EDGE_FADE - thickness, r));
-    vec4 border = vec4(big_circle - small_circle) * vec4(0, 0, 0, 1); 
-    vec4 circle = small_circle * vec4(0.6, 0.3, 0.2, 1) + border; 
+    vec4 small_circle = vec4(smoothstep(RADIUS - Thickness, RADIUS - EDGE_FADE - Thickness, r));
+    vec4 border = vec4(big_circle - small_circle) * OutlineColor; 
+    vec4 circle = small_circle * BaseColor + border; 
 
     result = vec4(circle);
 }

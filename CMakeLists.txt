@@ -18,6 +18,9 @@ add_executable(${PROJECT_NAME} main.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/graphics.cpp 
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/quad.cpp 
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/camera.cpp 
+    ${PROJECT_SOURCE_DIR}/heli/src/graphics/circle.cpp
+    ${PROJECT_SOURCE_DIR}/heli/src/graphics/shapes.cpp 
+
     ${PROJECT_SOURCE_DIR}/heli/src/core/event_manager.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game_object.cpp

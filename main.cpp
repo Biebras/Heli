@@ -7,6 +7,7 @@
 #include <core/game.hpp>
 #include <core/game_object.hpp>
 #include <core/component.hpp>
+#include <graphics/shapes.h>
 #include <graphics/quad.hpp>
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
@@ -17,30 +18,22 @@ void processInput(GLFWwindow *window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 500;
-float zoomLevel = 0.5f;
+float zoomLevel = 10;
 
 glm::vec3 cameraPos(0, 0, 0);
-glm::vec3 quadPos(0, 0, 0);
+glm::vec3 circlePos(0, 0, 0);
 
 //time 
 float deltaTime = 0;
 float lastFrame = 0;
-
-GameObject *quad = new GameObject();
 
 int main()
 {
     Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
-    Shader shader("./heli/assets/shaders/circle.glsl");
     Camera camera(zoomLevel);
     camera.ActivateCamera();
-
-    Quad *quadComponent = new Quad(&shader);
-    quad->AddComponent(static_cast<Component*>(quadComponent));
-    
-    quad->Start();
 
     // render loop
     // -----------
@@ -63,10 +56,11 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        DrawCircle(circlePos, 7, 0.01, glm::vec4(1, 1, 1, 1), glm::vec4(0, 0, 0, 1));
+        glm::vec3 newPos = circlePos;
+        newPos.x += 1;
+        DrawCircle(newPos, 7, 0.01, glm::vec4(0.2, 0.3, 0.86, 1), glm::vec4(0, 0, 0, 1));
 
-        quad->Update();
-
-        quad->Draw();
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
@@ -75,7 +69,6 @@ int main()
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
-    delete quad;
 
     glfwTerminate();
     return 0;
@@ -89,8 +82,8 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-       quad->transform->Position.x += 1 * deltaTime; 
+       circlePos.x += 1 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-       quad->transform->Position.x -= 1 * deltaTime; 
+       circlePos.x -= 1 * deltaTime; 
 }

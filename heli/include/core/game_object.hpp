@@ -11,9 +11,9 @@ class GameObject
     public:
         GameObject();
         ~GameObject();
-        void Start();
-        void Update();
-        void Draw();
+        virtual void Start();
+        virtual void Update();
+        virtual void Draw();
         void AddComponent(Component* component);
         template<typename T>
         T* GetComponent()
