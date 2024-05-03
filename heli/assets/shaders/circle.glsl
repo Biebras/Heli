@@ -16,7 +16,7 @@ void main()
 #shader fragment
 #version 410 core
 
-#define EDGE_FADE 0.01
+#define EDGE_FADE 0.005
 #define RADIUS 0.25
 
 in vec2 uv;

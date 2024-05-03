@@ -10,7 +10,12 @@ float ScreenAspectRatio = 0;
 
 void SetAscpectRatio(int width, int height)
 {
-    ScreenAspectRatio = (float)width / (float)height;
+    float aspect = (float)width / (float)height;
+
+    if (aspect < 1)
+        aspect = (float)height / (float)width;
+
+    ScreenAspectRatio = aspect;
     windowEvents.OnAspectRatioChange.Invoke(ScreenAspectRatio);
 }
 

@@ -7,6 +7,7 @@
 #include <core/game.hpp>
 #include <core/game_object.hpp>
 #include <core/component.hpp>
+#include <core/colors.h>
 #include <graphics/shapes.h>
 #include <graphics/quad.hpp>
 #include <graphics/shader.h>
@@ -53,13 +54,12 @@ int main()
         // ------
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-        glClearColor(0.2f, 0.3f, 0.3f, 0.0f);
+        glClearColor(WHITE_COLOR.x, WHITE_COLOR.y, WHITE_COLOR.z, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        DrawCircle(circlePos, 7, 0.01, glm::vec4(1, 1, 1, 1), glm::vec4(0, 0, 0, 1));
-        glm::vec3 newPos = circlePos;
-        newPos.x += 1;
-        DrawCircle(newPos, 7, 0.01, glm::vec4(0.2, 0.3, 0.86, 1), glm::vec4(0, 0, 0, 1));
+        camera.UpdateProjection(ScreenAspectRatio);
+        DrawCircle(circlePos, 7, 0.025, BLUE_COLOR, BLACK_COLOR);
+        DrawRectangle(glm::vec3(0, 0, 0), RED_COLOR);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -86,4 +86,10 @@ void processInput(GLFWwindow *window)
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
        circlePos.x -= 1 * deltaTime; 
+
+    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+       circlePos.y += 1 * deltaTime; 
+
+    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+       circlePos.y -= 1 * deltaTime; 
 }

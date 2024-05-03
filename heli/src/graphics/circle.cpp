@@ -6,8 +6,6 @@ Circle::Circle() : GameObject()
 {
     _circleShader = new Shader("./heli/assets/shaders/circle.glsl");
     AddComponent(static_cast<Component*>(new Quad(_circleShader))); 
-
-    Start();
 }
 
 Circle::~Circle()

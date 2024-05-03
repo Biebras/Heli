@@ -1,13 +1,17 @@
 #include <graphics/circle.hpp>
+#include <graphics/rectangle.hpp>
 #include <graphics/shapes.h>
 #include <core/event_manager.h>
 
 Circle* circle;
+Rectangle* rectangle;
 
 void InitShapes()
 {
     circle = new Circle();
+    rectangle = new Rectangle();
 
+    circle->Start();
     circle->Start();
 }
 
@@ -22,4 +26,14 @@ void DrawCircle(glm::vec3 position, float radius, float thickness, glm::vec4 bas
     circle->Update();
 
     circle->Draw();
+}
+
+void DrawRectangle(glm::vec3 position, glm::vec4 baseColor)
+{
+    rectangle->transform->Position = position;
+    rectangle->SetBaseColor(baseColor);
+
+    rectangle->Update();
+
+    rectangle->Draw();
 }
