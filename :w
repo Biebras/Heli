@@ -1,8 +1,0 @@
-#include <graphics/rectangle.hpp>
-#include <graphics/quad.hpp>
-
-Rectangle::Rectangle() : GameObject()
-{
-    _rectangleShader = new Shader("./heli/assets/shaders/circle.glsl");
-    AddComponent(static_cast<Component*>(new Quad(_rectangleShader))); 
-}

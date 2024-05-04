@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <stb_image.h>
 
 #include <core/game.hpp>
 #include <core/game_object.hpp>
@@ -12,6 +13,7 @@
 #include <graphics/quad.hpp>
 #include <graphics/shader.h>
 #include <graphics/graphics.h>
+#include <graphics/texture.hpp>
 #include <graphics/camera.hpp>
 
 void processInput(GLFWwindow *window);
@@ -36,6 +38,19 @@ int main()
     Camera camera(zoomLevel);
     camera.ActivateCamera();
 
+    GameObject *gameObject = new GameObject();
+    gameObject->transform->Scale = glm::vec3(2, 2, 2);
+    Shader *spriteShader = new Shader("./heli/assets/shaders/sprite.glsl");
+    Texture *texture = new Texture("./heli/assets/images/gruvbox-icon.png");
+    Quad *quad = new Quad(spriteShader);
+    gameObject->AddComponent(static_cast<Component*>(quad));
+
+    gameObject->Start();
+
+    spriteShader->Use();
+    texture->Bind();
+    spriteShader->SetInt("BaseTexture", 0);
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -56,10 +71,10 @@ int main()
         glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
         glClearColor(WHITE_COLOR.x, WHITE_COLOR.y, WHITE_COLOR.z, 0);
         glClear(GL_COLOR_BUFFER_BIT);
+        gameObject->Update();
 
-        camera.UpdateProjection(ScreenAspectRatio);
         DrawCircle(circlePos, 7, 0.025, BLUE_COLOR, BLACK_COLOR);
-        DrawRectangle(glm::vec3(0, 0, 0), RED_COLOR);
+        gameObject->Draw();
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

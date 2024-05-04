@@ -12,6 +12,7 @@ add_subdirectory(vendors/glm)
 
 # Headers
 include_directories(${PROJECT_SOURCE_DIR}/heli/include)
+include_directories(${PROJECT_SOURCE_DIR}/vendors/stb)
 
 # Executables
 add_executable(${PROJECT_NAME} main.cpp
@@ -21,6 +22,7 @@ add_executable(${PROJECT_NAME} main.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/circle.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/rectangle.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/shapes.cpp 
+    ${PROJECT_SOURCE_DIR}/heli/src/graphics/texture.cpp 
 
     ${PROJECT_SOURCE_DIR}/heli/src/core/event_manager.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game.cpp
