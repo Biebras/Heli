@@ -10,8 +10,7 @@ out vec4 fragPos;
 
 void main()
 {
-    vec4 pos = MVP * vec4(Pos, 1.0f);
-    gl_Position = pos;
+    gl_Position = MVP * vec4(Pos, 1.0f);
     fragPos = Model * vec4(Pos, 1.0f); 
 }
 
@@ -28,7 +27,7 @@ out vec4 result;
 
 void main()
 {
-    float grid = Grid(vec2(fragPos.x, fragPos.y), 1, 0.01f);
+    float grid = Grid(vec2(fragPos.x, fragPos.y), 1, 0.015f);
     result = vec4(grid, grid, grid, 1);
 }
 
@@ -41,6 +40,6 @@ float Grid(vec2 fragCoord, float space, float gridWidth)
     vec2 a2 = mod(p + size, space);
     vec2 a = a2 - a1;
        
-    float g = min(a.x, a.y);
-    return clamp(g * 100, 0., 1.0);
+    float g = min(a.x, a.y) * 100;
+    return clamp(g, 0., 1.0);
 }

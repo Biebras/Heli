@@ -66,7 +66,7 @@ class Renderer : public Component
         void Draw() override
         {
             Shader->Use();
-            Shader->SetMatrix4("MVP", parent->transform->GetModel() * Game::Get().ActiveCamera->GetVP());
+            Shader->SetMatrix4("MVP", Game::Get().ActiveCamera->GetVP() * parent->transform->GetModel());
             Shader->SetMatrix4("Model", parent->transform->GetModel());
             glBindVertexArray(_VAO);
             glDrawElements(GL_TRIANGLES, _indicesCount, GL_UNSIGNED_INT, 0);

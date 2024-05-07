@@ -1,3 +1,5 @@
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/fwd.hpp"
 #include <core/event.hpp>
 #include <core/event_manager.h>
 #include <graphics/camera.hpp>
@@ -27,12 +29,17 @@ void Camera::ActivateCamera()
     cameraEvents.OnActivate.Invoke(this);    
 }
 
-glm::mat4 Camera::GetVP()
+glm::mat4 Camera::GetViewMatrix()
 {
     glm::mat4 view = glm::mat4(1);
     view = glm::translate(view, _cameraPos);
 
-    return _projection * view;
+    return view;
+}
+
+glm::mat4 Camera::GetVP()
+{
+    return _projection * GetViewMatrix();
 }
 
 void Camera::UpdateProjection(float aspectRatio)
@@ -57,4 +64,14 @@ void Camera::SetZoomLevel(float zoomLevel)
 {
     _zoomLevel = zoomLevel;
 }
+
+glm::vec2 Camera::ScreenToWorldPoint(glm::vec2 screenPos)
+{
+    glm::mat4 invMatrix = glm::inverse(GetVP()); 
+    glm::vec4 pos = invMatrix * glm::vec4(screenPos.x, screenPos.y, 0, 1);
+    return glm::vec2(pos.x, pos.y);
+}
+
+
+
 

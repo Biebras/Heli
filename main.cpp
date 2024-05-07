@@ -21,10 +21,10 @@ void processInput(GLFWwindow *window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 500;
-float zoomLevel = 10;
+float zoomLevel = 2;
 
 glm::vec3 cameraPos(0, 0, 0);
-glm::vec3 circlePos(0, 0, 0);
+glm::vec3 circlePos(1, 0, 0);
 
 //time 
 float deltaTime = 0;
@@ -35,16 +35,8 @@ int main()
     Game& game = Game::Get();
     GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
 
-    Camera camera(zoomLevel);
-    camera.ActivateCamera();
-
-    GameObject *gameObject = new GameObject();
-    gameObject->transform->Scale = glm::vec3(20, 20, 20);
-    gameObject->AddComponent(static_cast<Component*>(new Quad("heli_grid")));
-    //Sprite *sprite = new Sprite("texture_test");
-    //gameObject->AddComponent(static_cast<Component*>(sprite));
-
-    gameObject->Start();
+    Camera *camera = new Camera(zoomLevel);
+    camera->ActivateCamera();
 
     // render loop
     // -----------
@@ -58,8 +50,8 @@ int main()
         // -----
         processInput(window);
 
-        camera.SetCameraPos(cameraPos);
-        gameObject->Update();
+        camera->UpdateProjection(ScreenAspectRatio);
+        camera->SetCameraPos(cameraPos);
         //gameObject->transform->Position.x += deltaTime * 0.01f;
 
         // render
@@ -69,8 +61,9 @@ int main()
         glClearColor(WHITE_COLOR.x, WHITE_COLOR.y, WHITE_COLOR.z, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        gameObject->Draw();
+        DrawGrid();
         DrawCircle(circlePos, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
+        DrawRectangle(glm::vec2(-0.5f, 0.5f), glm::vec2(0.5, -0.5f), RED_COLOR);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -93,14 +86,14 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-       circlePos.x += 1 * deltaTime; 
+       cameraPos.x -= 1 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-       circlePos.x -= 1 * deltaTime; 
+       cameraPos.x += 1 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-       circlePos.y += 1 * deltaTime; 
+       cameraPos.y -= 1 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-       circlePos.y -= 1 * deltaTime; 
+       cameraPos.y += 1 * deltaTime; 
 }
