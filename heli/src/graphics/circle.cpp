@@ -1,11 +1,12 @@
 #include <graphics/circle.hpp>
 #include <graphics/quad.hpp>
+#include <graphics/resources.h>
 #include <core/component.hpp>
 
 Circle::Circle() : GameObject()
 {
-    _circleShader = new Shader("./heli/assets/shaders/circle.glsl");
-    AddComponent(static_cast<Component*>(new Quad(_circleShader))); 
+    _circleShader = GetShader("heli_circle"); 
+    AddComponent(static_cast<Component*>(new Quad("heli_circle"))); 
 }
 
 Circle::~Circle()

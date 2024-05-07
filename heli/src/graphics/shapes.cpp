@@ -1,6 +1,7 @@
 #include <graphics/circle.hpp>
 #include <graphics/rectangle.hpp>
 #include <graphics/shapes.h>
+#include <graphics/resources.h>
 #include <core/event_manager.h>
 
 Circle* circle;

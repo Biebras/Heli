@@ -9,6 +9,7 @@
 #include <core/component.hpp>
 #include <core/transform.hpp>
 #include <graphics/shader.h>
+#include <graphics/resources.h>
 #include <vector>
 
 struct Vertex
@@ -23,9 +24,9 @@ struct Vertex
 class Renderer : public Component
 {
     public:
-        Renderer(Shader *shader)
+        Renderer(const char* shaderName)
         {
-            _shader = shader;  
+            Shader = GetShader(shaderName);
         }
         ~Renderer()
         {
@@ -64,13 +65,15 @@ class Renderer : public Component
 
         void Draw() override
         {
-            _shader->Use();
-            _shader->SetMatrix4("MVP", parent->transform->GetModel() * Game::Get().ActiveCamera->GetVP());
+            Shader->Use();
+            Shader->SetMatrix4("MVP", parent->transform->GetModel() * Game::Get().ActiveCamera->GetVP());
+            Shader->SetMatrix4("Model", parent->transform->GetModel());
             glBindVertexArray(_VAO);
             glDrawElements(GL_TRIANGLES, _indicesCount, GL_UNSIGNED_INT, 0);
         }
+
+        Shader* Shader;
     private:
-        Shader* _shader;
         unsigned int _VAO, _VBO, _EBO; 
         int _indicesCount;
 };

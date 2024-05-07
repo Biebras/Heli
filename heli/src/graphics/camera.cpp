@@ -37,9 +37,10 @@ glm::mat4 Camera::GetVP()
 
 void Camera::UpdateProjection(float aspectRatio)
 {
-    _projection  = glm::ortho(-aspectRatio * _zoomLevel, 
-                               aspectRatio * _zoomLevel, 
-                              -_zoomLevel, _zoomLevel, -100.0f, 100.0f);
+    float top = 10.f / 2;
+    float right = top * aspectRatio;
+
+    _projection  = glm::ortho(-right, right, -top, top, -100.0f, 100.0f);
 }
 
 void Camera::SetCameraPos(glm::vec3 pos)

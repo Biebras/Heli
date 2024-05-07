@@ -23,6 +23,8 @@ add_executable(${PROJECT_NAME} main.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/rectangle.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/shapes.cpp 
     ${PROJECT_SOURCE_DIR}/heli/src/graphics/texture.cpp 
+    ${PROJECT_SOURCE_DIR}/heli/src/graphics/resources.cpp 
+    ${PROJECT_SOURCE_DIR}/heli/src/graphics/sprite.cpp 
 
     ${PROJECT_SOURCE_DIR}/heli/src/core/event_manager.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game.cpp

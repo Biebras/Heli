@@ -7,7 +7,7 @@
 class Quad : public Renderer 
 {
     public:
-        Quad(Shader* shader);
+        Quad(const char* shaderName);
 };
 
 #endif

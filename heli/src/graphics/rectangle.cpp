@@ -1,10 +1,11 @@
 #include <graphics/rectangle.hpp>
+#include <graphics/resources.h>
 #include <graphics/quad.hpp>
 
 Rectangle::Rectangle() : GameObject()
 {
-    _rectangleShader = new Shader("./heli/assets/shaders/rectangle.glsl");
-    AddComponent(static_cast<Component*>(new Quad(_rectangleShader))); 
+    _rectangleShader = GetShader("heli_rectangle"); 
+    AddComponent(static_cast<Component*>(new Quad("heli_rectangle"))); 
 }
 
 void Rectangle::Draw()

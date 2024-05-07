@@ -4,6 +4,8 @@
 #include <core/event_manager.h>
 #include <graphics/graphics.h>
 #include <graphics/shapes.h>
+#include <graphics/resources.h>
+
 #include <iostream>
 
 float ScreenAspectRatio = 0;
@@ -65,6 +67,7 @@ GLFWwindow* CreateWindow(int screen_width, int screen_height, const char* title)
     { std::cout << "Failed to initialize GLAD" << std::endl; exit(-1); }
 
     //Other Init
+    LoadHeliResources(); 
     InitShapes();
 
     return window;

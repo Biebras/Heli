@@ -1,6 +1,6 @@
 #include <graphics/quad.hpp>
 
-Quad::Quad(Shader* shader) : Renderer(shader)
+Quad::Quad(const char* shaderName) : Renderer(shaderName)
 {
     std::vector<Vertex> vertices = 
     {
