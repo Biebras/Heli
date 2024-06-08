@@ -21,10 +21,10 @@ void processInput(GLFWwindow *window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 500;
-float zoomLevel = 2;
+float zoomLevel = 1;
 
 glm::vec3 cameraPos(0, 0, 0);
-glm::vec3 circlePos(1, 0, 0);
+glm::vec3 circlePos(0, 0, 0);
 
 //time 
 float deltaTime = 0;
@@ -57,13 +57,15 @@ int main()
         // render
         // ------
         glEnable(GL_BLEND);
-        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+        //glEnable(GL_FRAMEBUFFER_SRGB);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glClearColor(WHITE_COLOR.x, WHITE_COLOR.y, WHITE_COLOR.z, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
         DrawGrid();
-        DrawCircle(circlePos, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
-        DrawRectangle(glm::vec2(-0.5f, 0.5f), glm::vec2(0.5, -0.5f), RED_COLOR);
+        //DrawCircle(circlePos, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
+        DrawCircle(circlePos + glm::vec3 {0.f, 1.f, 0}, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
+        DrawRectangle(glm::vec2(-0.5f, 0.5f), glm::vec2(0.5f, -0.5f), 0.05f, RED_COLOR, BLACK_COLOR, glm::vec4(1));
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -86,14 +88,14 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-       cameraPos.x -= 1 * deltaTime; 
+       cameraPos.x -= 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-       cameraPos.x += 1 * deltaTime; 
+       cameraPos.x += 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-       cameraPos.y -= 1 * deltaTime; 
+       cameraPos.y -= 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-       cameraPos.y += 1 * deltaTime; 
+       cameraPos.y += 2 * deltaTime; 
 }

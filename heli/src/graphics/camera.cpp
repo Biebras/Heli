@@ -44,7 +44,7 @@ glm::mat4 Camera::GetVP()
 
 void Camera::UpdateProjection(float aspectRatio)
 {
-    float top = 10.f / 2;
+    float top = 10.f / 2 * _zoomLevel;
     float right = top * aspectRatio;
 
     _projection  = glm::ortho(-right, right, -top, top, -100.0f, 100.0f);

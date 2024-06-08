@@ -11,10 +11,12 @@ class Rectangle : public GameObject
         Rectangle();
         ~Rectangle();
         void Draw() override;
-        void SetBaseColor(glm::vec4 baseColor);
+        float Thickness;
+        glm::vec4 BaseColor = glm::vec4(1);
+        glm::vec4 OutlineColor = glm::vec4(0, 0, 0, 1);
+        glm::vec4 CornerRadius = glm::vec4(0);
     private:
         Shader* _rectangleShader;
-        glm::vec4 _baseColor = glm::vec4(1);
 };
 
 #endif

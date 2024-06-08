@@ -17,9 +17,9 @@ void main()
 #shader fragment
 #version 410 core
 
-float Grid(vec2 fragCoord, float space, float gridWidth);
+float SmoothGrid(vec2 p, vec2 ddx, vec2 ddy);
 
-uniform vec4 BaseColor;
+const float GridRatio = 60.0;
 
 in vec4 fragPos;
 
@@ -27,19 +27,23 @@ out vec4 result;
 
 void main()
 {
-    float grid = Grid(vec2(fragPos.x, fragPos.y), 1, 0.015f);
-    result = vec4(grid, grid, grid, 1);
+    vec2 world_uv = fragPos.xy - vec2(0.5 - (0.5 / GridRatio));
+    vec2 ddx_uvw = dFdx(world_uv); 
+    vec2 ddy_uvw = dFdy(world_uv);
+    float grid = SmoothGrid(world_uv, ddx_uvw, ddy_uvw);
+    grid = min(1, grid);
+    result = vec4(grid, grid, grid, 1 - grid);
 }
 
-float Grid(vec2 fragCoord, float space, float gridWidth)
+float SmoothGrid(vec2 p, vec2 ddx, vec2 ddy)
 {
-    vec2 p  = fragCoord - vec2(.5);
-    vec2 size = vec2(gridWidth);
-    
-    vec2 a1 = mod(p - size, space);
-    vec2 a2 = mod(p + size, space);
-    vec2 a = a2 - a1;
-       
-    float g = min(a.x, a.y) * 100;
-    return clamp(g, 0., 1.0);
+	// filter kernel
+    vec2 w = max(abs(ddx), abs(ddy)) + 0.01;
+
+	// analytic (box) filtering
+    vec2 a = p + 0.5 * w;                        
+    vec2 b = p - 0.5 * w;           
+    vec2 i = (floor(a) + min(fract(a) * GridRatio, 1.0) - floor(b) - min(fract(b) * GridRatio, 1.0)) / (GridRatio * w);
+    // grid pattern
+    return (1.0 - i.x)*(1.0 - i.y);
 }

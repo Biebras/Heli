@@ -11,11 +11,10 @@ Rectangle::Rectangle() : GameObject()
 void Rectangle::Draw()
 {
     _rectangleShader->Use();
-    _rectangleShader->SetVector4("BaseColor", _baseColor);
-    GameObject::Draw();
-}
+    _rectangleShader->SetFloat("Thickness", Thickness);
+    _rectangleShader->SetVector4("BaseColor", BaseColor);
+    _rectangleShader->SetVector4("OutlineColor", OutlineColor);
+    _rectangleShader->SetVector4("CornerRadius", CornerRadius);
 
-void Rectangle::SetBaseColor(glm::vec4 baseColor)
-{
-    _baseColor = baseColor;
+    GameObject::Draw();
 }

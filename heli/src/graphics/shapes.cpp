@@ -49,11 +49,15 @@ void PositionQuad(GameObject* object, glm::vec2 topLeftCorner, glm::vec2 botRigh
     object->transform->Scale = glm::vec3(xScale, yScale, 0);
 }
 
-void DrawRectangle(glm::vec2 topLeftCorner, glm::vec2 botRightCorner, glm::vec4 baseColor)
+void DrawRectangle(glm::vec2 topLeftCorner, glm::vec2 botRightCorner, float thickness, glm::vec4 baseColor, glm::vec4 outlineColor, glm::vec4 cornerRadius)
 {
     PositionQuad(rectangle, topLeftCorner, botRightCorner);
 
-    rectangle->SetBaseColor(baseColor);
+    rectangle->Thickness = thickness;
+    rectangle->BaseColor = baseColor;
+    rectangle->OutlineColor = outlineColor;
+    rectangle->CornerRadius = cornerRadius;
+
     rectangle->Update();
     rectangle->Draw();
 }
