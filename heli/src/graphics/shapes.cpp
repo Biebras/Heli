@@ -62,6 +62,20 @@ void DrawRectangle(glm::vec2 topLeftCorner, glm::vec2 botRightCorner, float thic
     rectangle->Draw();
 }
 
+void DrawRectnagle(glm::vec2 center, glm::vec2 scale, float thickness, glm::vec4 baseColor, glm::vec4 outlineColor, glm::vec4 cornerRadius)
+{
+    rectangle->transform->Position = glm::vec3(center.x, center.y, 0);
+    rectangle->transform->Scale = glm::vec3(scale.x, scale.y, 0);
+
+    rectangle->Thickness = thickness;
+    rectangle->BaseColor = baseColor;
+    rectangle->OutlineColor = outlineColor;
+    rectangle->CornerRadius = cornerRadius;
+
+    rectangle->Update();
+    rectangle->Draw();
+}
+
 void DrawGrid()
 {
     Camera* camera = Game::Get().ActiveCamera;

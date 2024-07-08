@@ -16,7 +16,7 @@ Circle::~Circle()
 
 void Circle::SetRadius(float radius)
 {
-    transform->Scale = glm::vec3(radius, radius, radius);
+    transform->Scale = glm::vec3(radius * 2, radius * 2, radius * 2);
 }
 
 void Circle::SetThickness(float thickness)

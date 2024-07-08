@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/Heli.dir/heli/src/core/event_manager.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/core/event_manager.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/core/game.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/core/game.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/core/game_object.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/core/game_object.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/circle.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/circle.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/quad.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/quad.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/rectangle.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/rectangle.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/resources.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/resources.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/shapes.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/shapes.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/sprite.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/sprite.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/graphics/texture.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/graphics/texture.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/physics/circle_collider.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/physics/circle_collider.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/physics/collider.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/physics/collider.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/physics/collider_manager.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/physics/collider_manager.cpp.o.d"
+  "CMakeFiles/Heli.dir/heli/src/physics/rectangle_collider.cpp.o"
+  "CMakeFiles/Heli.dir/heli/src/physics/rectangle_collider.cpp.o.d"
+  "CMakeFiles/Heli.dir/main.cpp.o"
+  "CMakeFiles/Heli.dir/main.cpp.o.d"
+  "Heli"
+  "Heli.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/Heli.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

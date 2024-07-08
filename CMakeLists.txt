@@ -29,6 +29,11 @@ add_executable(${PROJECT_NAME} main.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/event_manager.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game.cpp
     ${PROJECT_SOURCE_DIR}/heli/src/core/game_object.cpp
+
+    ${PROJECT_SOURCE_DIR}/heli/src/physics/collider.cpp
+    ${PROJECT_SOURCE_DIR}/heli/src/physics/collider_manager.cpp
+    ${PROJECT_SOURCE_DIR}/heli/src/physics/rectangle_collider.cpp
+    ${PROJECT_SOURCE_DIR}/heli/src/physics/circle_collider.cpp
     )
  
 # Link libraries

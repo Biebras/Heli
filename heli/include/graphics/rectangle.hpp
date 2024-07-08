@@ -5,6 +5,8 @@
 #include <core/game_object.hpp>
 #include <glm/glm.hpp>
 
+class RectangleCollision;
+
 class Rectangle : public GameObject
 {
     public:
@@ -17,6 +19,7 @@ class Rectangle : public GameObject
         glm::vec4 CornerRadius = glm::vec4(0);
     private:
         Shader* _rectangleShader;
+        void CollisionWithRectangle(RectangleCollision* other);
 };
 
 #endif

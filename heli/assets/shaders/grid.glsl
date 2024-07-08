@@ -32,7 +32,7 @@ void main()
     vec2 ddy_uvw = dFdy(world_uv);
     float grid = SmoothGrid(world_uv, ddx_uvw, ddy_uvw);
     grid = min(1, grid);
-    result = vec4(grid, grid, grid, 1 - grid);
+    result = vec4(grid, grid, grid, (1 - grid) * 0.5f);
 }
 
 float SmoothGrid(vec2 p, vec2 ddx, vec2 ddy)

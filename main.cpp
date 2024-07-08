@@ -15,6 +15,8 @@
 #include <graphics/resources.h>
 #include <graphics/sprite.hpp>
 #include <graphics/quad.hpp>
+#include <physics/rectangle_collider.hpp>
+#include <physics/circle_collider.hpp>
 
 void processInput(GLFWwindow *window);
 
@@ -30,13 +32,25 @@ glm::vec3 circlePos(0, 0, 0);
 float deltaTime = 0;
 float lastFrame = 0;
 
+GameObject* quad1 = new GameObject();
+GameObject* quad2 = new GameObject();
+
 int main()
 {
     Game& game = Game::Get();
-    GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Custom Window");
+    GLFWwindow *window = CreateWindow(SCR_WIDTH, SCR_HEIGHT, "Heli Engine");
 
     Camera *camera = new Camera(zoomLevel);
     camera->ActivateCamera();
+
+    quad1->AddComponent(new Sprite("texture_test"));
+    quad1->AddComponent(new RectangleCollider());
+    quad2->transform->Position.x = 1;
+    quad2->AddComponent(new Sprite("texture_test"));
+    quad2->AddComponent(new CircleCollider());
+
+    quad1->Start();
+    quad2->Start();
 
     // render loop
     // -----------
@@ -62,10 +76,16 @@ int main()
         glClearColor(WHITE_COLOR.x, WHITE_COLOR.y, WHITE_COLOR.z, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        quad1->Update();
+        quad2->Update();
+
+        DrawCircle(glm::vec3(0, 2, 0), 0.5f, 0.15f, RED_COLOR, BLACK_COLOR);
+        DrawRectnagle(glm::vec3(1, 2, 0), glm::vec2(1), 0.15f, BLUE_COLOR, BLACK_COLOR, glm::vec4(0.3f, 1, 0.5f, abs(glm::sin(glfwGetTime()))));
+
         DrawGrid();
+        quad2->Draw();
+        quad1->Draw();
         //DrawCircle(circlePos, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
-        DrawCircle(circlePos + glm::vec3 {0.f, 1.f, 0}, 1, 0.025, BLUE_COLOR, BLACK_COLOR);
-        DrawRectangle(glm::vec2(-0.5f, 0.5f), glm::vec2(0.5f, -0.5f), 0.05f, RED_COLOR, BLACK_COLOR, glm::vec4(1));
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -88,14 +108,14 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-       cameraPos.x -= 2 * deltaTime; 
+        quad1->transform->Position.x += 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-       cameraPos.x += 2 * deltaTime; 
+        quad1->transform->Position.x -= 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-       cameraPos.y -= 2 * deltaTime; 
+        quad1->transform->Position.y += 2 * deltaTime; 
 
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-       cameraPos.y += 2 * deltaTime; 
+        quad1->transform->Position.y -= 2 * deltaTime; 
 }

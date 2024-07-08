@@ -31,12 +31,12 @@ out vec4 result;
 void main()
 {
     vec2 cUV = uv - 0.5f; 
-
     float r = cUV.x * cUV.x + cUV.y * cUV.y;
-
     float big_circle = smoothstep(RADIUS, RADIUS - EDGE_FADE, r);
 
-    vec4 small_circle = vec4(smoothstep(RADIUS - Thickness, RADIUS - EDGE_FADE - Thickness, r));
+    // Matching thicness across shaders
+    float thickness = Thickness * 0.5f;
+    vec4 small_circle = vec4(smoothstep(RADIUS - thickness, RADIUS - EDGE_FADE - thickness, r));
     vec4 border = vec4(big_circle - small_circle) * OutlineColor; 
     vec4 circle = small_circle * BaseColor + border; 
 

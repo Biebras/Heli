@@ -35,8 +35,8 @@ float roundedBoxSDF(vec2 uv, vec4 Radius)
     vec2 Size = vec2(1.0);
     vec2 CenterPosition = uv;
 
-    Radius.xy = (CenterPosition.x>0.0)?Radius.xy : Radius.zw;
-    Radius.x  = (CenterPosition.y>0.0)?Radius.x  : Radius.y;
+    Radius.xy = (CenterPosition.x > 0.0) ? Radius.yz : Radius.xw;
+    Radius.x  = (CenterPosition.y > 0.0) ? Radius.x  : Radius.y;
     
     vec2 q = abs(CenterPosition)-Size+Radius.x;
     return min(max(q.x,q.y),0.0) + length(max(q,0.0)) - Radius.x;
@@ -49,9 +49,7 @@ void main()
 
     float smoothBorder = 1.0f - smoothstep(Thickness - EDGE_FADE, Thickness, abs(distance));
 
-    vec4 outlineColor = OutlineColor;
-    outlineColor.a = BaseColor.a;
-    vec4 color = mix(BaseColor, outlineColor, smoothBorder);
+    vec4 color = mix(BaseColor, OutlineColor, smoothBorder);
     color.a *= smoothDistance;
 
     result = color;

@@ -1,0 +1,242 @@
+[
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/main.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/main.cpp",
+  "output": "CMakeFiles/Heli.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/graphics.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/graphics.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/graphics.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/quad.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/quad.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/quad.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/quad.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/camera.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/camera.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/camera.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/circle.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/circle.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/circle.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/circle.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/rectangle.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/rectangle.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/rectangle.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/rectangle.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/shapes.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/shapes.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/shapes.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/shapes.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/texture.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/texture.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/texture.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/texture.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/resources.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/resources.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/resources.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/resources.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/graphics/sprite.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/sprite.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/graphics/sprite.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/graphics/sprite.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/core/event_manager.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/event_manager.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/event_manager.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/core/event_manager.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/core/game.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/game.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/game.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/core/game.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/core/game_object.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/game_object.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/core/game_object.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/core/game_object.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/physics/collider.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/collider.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/collider.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/physics/collider.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/physics/collider_manager.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/collider_manager.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/collider_manager.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/physics/collider_manager.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/physics/rectangle_collider.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/rectangle_collider.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/rectangle_collider.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/physics/rectangle_collider.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/stb -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/Heli.dir/heli/src/physics/circle_collider.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/circle_collider.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/heli/src/physics/circle_collider.cpp",
+  "output": "CMakeFiles/Heli.dir/heli/src/physics/circle_collider.cpp.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/context.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/context.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/context.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/context.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/init.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/init.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/init.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/init.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/input.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/input.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/input.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/input.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/monitor.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/monitor.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/monitor.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/platform.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/platform.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/platform.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/vulkan.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/vulkan.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/vulkan.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/window.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/window.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/window.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/window.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/egl_context.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/egl_context.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/egl_context.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/osmesa_context.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/osmesa_context.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/osmesa_context.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/null_init.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_init.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_init.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/null_monitor.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_monitor.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_monitor.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/null_window.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_window.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_window.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/null_joystick.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_joystick.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/null_joystick.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/cocoa_time.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_time.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_time.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/posix_module.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/posix_module.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/posix_module.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/posix_thread.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/posix_thread.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/posix_thread.c",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/cocoa_init.m.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_init.m",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_init.m",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/cocoa_joystick.m.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_joystick.m",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_joystick.m",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/cocoa_monitor.m.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_monitor.m",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_monitor.m",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/cocoa_window.m.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_window.m",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/cocoa_window.m",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GLFW_COCOA -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/include -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glfw/src -g -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fPIC -Wall -o CMakeFiles/glfw.dir/nsgl_context.m.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/nsgl_context.m",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glfw/src/nsgl_context.m",
+  "output": "vendors/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glad",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -o CMakeFiles/glad.dir/src/glad.c.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/src/glad.c",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glad/src/glad.c",
+  "output": "vendors/glad/CMakeFiles/glad.dir/src/glad.c.o"
+},
+{
+  "directory": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/build/vendors/glm/glm",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm -g -std=c++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wno-c++98-compat -Wno-c++98-compat-pedantic -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/detail/glm.cpp",
+  "file": "/Users/sauliusvincevicius/Documents/Projects/Heli-Engine/vendors/glm/glm/detail/glm.cpp",
+  "output": "vendors/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
+}
+]
